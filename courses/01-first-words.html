@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 1 · First words: from plain text to a real page - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Session 1 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Session 1 of 4</div>
+    <h1>First words: <span class="accent">from plain text to a real page</span></h1>
+    <p class="sub">Markdown is how the internet writes: GitHub, Notion, Reddit, Slack, every AI chat box. Today you learn what it is, type your first formatted page in a split-pane editor, and start the about-me page that goes live on the internet in Session 4. If you can type, you're qualified.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Easiest</span>
+      <span class="chip audience">Total beginners</span>
+      <span class="chip audience">Nothing to install</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Build your page</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why this course exists</h2>
+    </div>
+    <p class="lede">You've seen markdown even if you've never heard the name - every README on GitHub, every nicely formatted ChatGPT answer, every Notion page is markdown underneath. This course teaches it the only way that sticks: by building something real. Four sessions, one running project - your own page, live on your GitHub profile by the end.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR page</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      The markdown mental model (plain text in, beautiful pages out), the seven everyday elements - headings, paragraphs, line breaks, bold, italic, lists, links - and your about-me page drafted in a real split-pane editor. No installs, no accounts, just a browser tab.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT MARKDOWN IS ============ -->
+  <section class="section" id="what-markdown-is">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers Markdown Guide "getting started" + the original spec page</span>
+      <h2>What markdown actually is <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Markdown is a lightweight markup language: you add a few characters to plain text - <span class="syn-chip"># for headings</span> <span class="syn-chip">**for bold**</span> - and a processor turns it into a formatted page. The text stays readable BOTH ways. That's the whole trick.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The markdown pipeline: you type plain text with markers, a processor converts it to HTML, and it renders everywhere">
+        <style>
+          .fwT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .fwS { font: 400 12px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .fwM { font: 600 13px ui-monospace, Menlo, monospace; fill: #FFFFFF; }
+          .fwX { font: 400 12.5px Inter, sans-serif; fill: #5C6B84; }
+          .fwA { stroke: #C3CDE0; stroke-width: 2; fill: none; marker-end: url(#fwAh); }
+        </style>
+        <defs>
+          <marker id="fwAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C3CDE0" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="30" y="55" width="230" height="100" rx="12" fill="#052C70"/>
+        <text class="fwT" x="50" y="82">1 · You type</text>
+        <text class="fwM" x="50" y="108"># My page</text>
+        <text class="fwM" x="50" y="130">**hello** world</text>
+        <rect x="330" y="55" width="220" height="100" rx="12" fill="#083FA1"/>
+        <text class="fwT" x="350" y="82">2 · A processor</text>
+        <text class="fwS" x="350" y="106">converts your text to HTML</text>
+        <text class="fwS" x="350" y="126">(GitHub, Notion, editors -</text>
+        <text class="fwS" x="350" y="144">it's built into all of them)</text>
+        <rect x="620" y="55" width="230" height="100" rx="12" fill="#2E63C4"/>
+        <text class="fwT" x="640" y="82">3 · It renders</text>
+        <text class="fwS" x="640" y="106">a big bold heading,</text>
+        <text class="fwS" x="640" y="126">real formatting - on any</text>
+        <text class="fwS" x="640" y="144">site, phone, or app</text>
+        <line class="fwA" x1="262" y1="105" x2="324" y2="105"/>
+        <line class="fwA" x1="552" y1="105" x2="614" y2="105"/>
+        <text class="fwX" x="30" y="200">The file is just text (.md). No lock-in, no special app - it opens in anything, forever. That's why the whole internet standardized on it.</text>
+        <text class="fwX" x="30" y="222">This course: you type in a browser split-pane editor and watch step 3 happen live on every keystroke.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the whole markdown pipeline: type, convert, render</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>A language you already half-know<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Markdown's characters aren't arbitrary - they're how people already decorated plain-text email in the 90s: stars for *emphasis*, dashes for lists, <span class="syn-chip">&gt;</span> for quoting someone. Markdown just made the old habits official. That's why it feels familiar on day one.</p>
+        <ul>
+          <li><strong>It's everywhere:</strong> GitHub, Reddit, Notion, Obsidian, Slack, Discord, Jupyter, and every major AI chat - one syntax, learned once.</li>
+          <li><strong>It's future-proof:</strong> a markdown file is plain text; it will open unchanged in 30 years. Word files from 1995 can't say that.</li>
+          <li><strong>It's fast:</strong> your hands never leave the keyboard - no ribbon, no menus, no hunting for the bold button.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The moment it clicks:</strong> you paste your meeting notes into a ChatGPT or Claude chat and the answer comes back with clean headings and bullet lists. That formatting IS markdown - the AI writes it, the chat window renders it. After today you'll write it yourself, and you'll also read AI answers in a whole new way.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Born 2004, designed to be read<span class="mini">2 min story</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>John Gruber released Markdown in 2004 (final version 1.0.1, December 2004), with feedback from Aaron Swartz. The design goal, in Gruber's own words: make it "as readable as possible" - a markdown document should be publishable as-is, as plain text, without looking like it's been marked up with tags.</p>
+        <p>Compare: HTML needs <span class="syn-chip">&lt;strong&gt;bold&lt;/strong&gt;</span>, markdown needs <span class="syn-chip">**bold**</span>. Both produce the same result - one of them you can still read as you type it. Twenty years later that one decision is why markdown won.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Flavors: why markdown differs slightly app to app<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Practically every app implements markdown a little differently - these variants are called <strong>flavors</strong>, like dialects of one language. Two names worth knowing now:</p>
+        <ul>
+          <li><strong>CommonMark:</strong> the standardized core - the basics you learn today work everywhere.</li>
+          <li><strong>GitHub Flavored Markdown (GFM):</strong> CommonMark plus extras - tables, checklists, emoji shortcodes. Sessions 2-3 territory, and what your profile page will use.</li>
+        </ul>
+        <p>Rule of thumb: the Session 1 elements are universal; anything fancier, check the app. The deep-dive track (DD2) maps the whole flavor landscape if you get curious.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: HEADINGS + PARAGRAPHS ============ -->
+  <section class="section" id="headings-paragraphs">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers CommonMark tutorial lessons 3-4</span>
+      <h2>Headings, paragraphs, and the line-break trap <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Structure first. Two characters - <span class="syn-chip">#</span> and the blank line - give a page its whole skeleton.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Headings: # to ######<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk"># </span><span class="mkw">My page</span>
+<span class="mk">## </span><span class="mkw">About me</span>
+<span class="mk">### </span><span class="mkw">Hobbies</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <div class="rh" style="font-size:1.2rem">My page</div>
+            <div style="font-size:1.02rem;font-weight:800;margin:.3rem 0 .2rem">About me</div>
+            <div style="font-size:.92rem;font-weight:800">Hobbies</div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>One <span class="syn-chip">#</span> per level:</strong> <span class="syn-chip">#</span> is the page title, <span class="syn-chip">##</span> a section, <span class="syn-chip">###</span> a subsection - down to six.</li>
+          <li><strong>The space is NOT optional:</strong> <span class="syn-chip">#Heading</span> silently fails; <span class="syn-chip"># Heading</span> works. The #1 beginner bug, and your first quiz question.</li>
+          <li><strong>Breathing room:</strong> put a blank line before and after each heading - some apps mis-render without it.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Paragraphs + the invisible line-break trap<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mkw">Line one.</span>
+<span class="mkw">Line two - SAME paragraph!</span>
+
+<span class="mkw">Blank line = new paragraph.</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <p>Line one. Line two - SAME paragraph!</p>
+            <p style="margin-top:.6rem">Blank line = new paragraph.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Enter once does nothing.</strong> Markdown joins consecutive lines into one paragraph. A <strong>blank line</strong> starts a new one.</li>
+          <li><strong>Want a line break WITHOUT a new paragraph?</strong> End the line with two spaces, or write <span class="syn-chip">&lt;br&gt;</span>. The two-space version is invisible in your editor - the classic trap when a poem or address won't break.</li>
+          <li><strong>Never indent paragraphs.</strong> Four leading spaces means "code" in markdown - your text would render in a monospace box (Session 2 explains why).</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The debugging reflex</strong>
+          Text glued together that should be separate? You forgot a blank line. Text in a weird grey box? You indented it. Those two fixes solve most day-one confusion.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Horizontal rules + the underline-style headings<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Horizontal rule:</strong> three or more dashes <span class="syn-chip">---</span> alone on a line draw a divider. Keep a blank line above it - text directly above <span class="syn-chip">---</span> turns into a heading instead (see next point).</li>
+          <li><strong>Setext headings:</strong> the older style - underline text with <span class="syn-chip">===</span> for a level-1 or <span class="syn-chip">---</span> for a level-2 heading. You'll see it in the wild; writing <span class="syn-chip">#</span> style is cleaner.</li>
+          <li><strong>Escaping accidents:</strong> a line that starts with a character markdown cares about (like a literal <span class="syn-chip">#</span> or <span class="syn-chip">-</span>) renders as formatting unless you put a backslash in front: <span class="syn-chip">\# not a heading</span>. Full escapable set: <span class="syn-chip">\ ` * _ { } [ ] &lt; &gt; ( ) # + - . ! |</span></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: EMPHASIS, LISTS, LINKS ============ -->
+  <section class="section" id="emphasis-lists-links">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers CommonMark tutorial lessons 2, 6-7</span>
+      <h2>Bold, italic, lists, and links <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">The everyday four. Master these plus Part 2 and you can already write 90% of the markdown you'll ever need.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Emphasis: stars do the work<span class="mini">1.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span>I <span class="mkb">*</span>love<span class="mkb">*</span> markdown.
+I <span class="mkb">**</span>really<span class="mkb">**</span> love it.
+It's <span class="mkb">***</span>that<span class="mkb">***</span> good.</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <p>I <em>love</em> markdown.<br>I <strong>really</strong> love it.<br>It's <strong><em>that</em></strong> good.</p>
+          </div>
+        </div>
+        <ul>
+          <li>One star = <em>italic</em>, two = <strong>bold</strong>, three = <strong><em>both</em></strong>. Underscores work too, but stick with stars - they're safer mid-word and everyone reads them.</li>
+          <li>Stars hug the text: <span class="syn-chip">**bold**</span> works, <span class="syn-chip">** bold **</span> does not. Openers and closers must match.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Lists: dashes and numbers<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">- </span>coffee
+<span class="mk">- </span>hiking
+<span class="mk">- </span>data viz
+
+<span class="mk">1. </span>wake up
+<span class="mk">1. </span>coffee first
+<span class="mk">1. </span>then everything else</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <ul><li>coffee</li><li>hiking</li><li>data viz</li></ul>
+            <ol style="margin:.4rem 0 0 1.2rem"><li>wake up</li><li>coffee first</li><li>then everything else</li></ol>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Bulleted:</strong> start lines with <span class="syn-chip">- </span> (space required after the dash - same rule as headings). <span class="syn-chip">*</span> and <span class="syn-chip">+</span> also work; pick ONE marker and stay consistent within a list.</li>
+          <li><strong>Numbered:</strong> <span class="syn-chip">1. </span> with a period, not a parenthesis. Fun fact: the actual numbers don't matter - all <span class="syn-chip">1.</span> renders as 1, 2, 3. Lazy numbering is a pro habit (insert items without renumbering).</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Links: text in brackets, address in parentheses<span class="mini">1.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span>Find me on <span class="mk">[</span><span class="mkw">LinkedIn</span><span class="mk">](</span>https://linkedin.com<span class="mk">)</span>.</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <p>Find me on <a href="#" onclick="return false" style="color:var(--indigo)">LinkedIn</a>.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Memory hook: <strong>square brackets say it, round brackets take you there</strong> - <span class="syn-chip">[text](url)</span>, no space between them.</li>
+          <li>Bare URL in a hurry? Wrap it in angle brackets: <span class="syn-chip">&lt;https://example.com&gt;</span> becomes a clickable link.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Nested lists, reference links, and tidy escaping<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Nested lists:</strong> indent the sub-item four spaces under its parent. (Some apps accept two - four is the standard that works everywhere.)</li>
+          <li><strong>Reference-style links:</strong> keep long URLs out of your sentences - write <span class="syn-chip">[my talk][1]</span> in the text and <span class="syn-chip">[1]: https://very-long-url...</span> at the bottom of the file. Same rendering, tidier source.</li>
+          <li><strong>Links with titles:</strong> <span class="syn-chip">[text](url "hover text")</span> adds a tooltip.</li>
+          <li><strong>Literal stars and dashes:</strong> writing about markdown itself, or a filename with underscores? Backslash first: <span class="syn-chip">\*not italic\*</span>.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4: THE PROJECT ============ -->
+  <section class="section" id="the-project">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the running project</span>
+      <h2>One page, four sessions <span class="tag concept">2 min live</span></h2>
+    </div>
+    <p class="lede">Every session grows the same file: your about-me page. No toy exercises - in Session 4 this exact document goes live on your GitHub profile, where anyone who looks you up will see it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The four-session roadmap: draft the page, add structure, polish it, ship it live">
+        <style>
+          .fwrT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .fwrX { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+          .fwrA { stroke: #C3CDE0; stroke-width: 2; fill: none; marker-end: url(#fwrAh); }
+        </style>
+        <defs>
+          <marker id="fwrAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C3CDE0" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="30" y="55" width="180" height="46" rx="10" fill="#052C70"/>
+        <text class="fwrT" x="52" y="83">1 · Page drafted</text>
+        <rect x="245" y="55" width="180" height="46" rx="10" fill="#083FA1"/>
+        <text class="fwrT" x="267" y="83">2 · Structure in</text>
+        <rect x="460" y="55" width="180" height="46" rx="10" fill="#2E63C4"/>
+        <text class="fwrT" x="490" y="83">3 · Looks pro</text>
+        <rect x="675" y="55" width="180" height="46" rx="10" fill="#16233B"/>
+        <text class="fwrT" x="695" y="83">4 · Live on GitHub</text>
+        <line class="fwrA" x1="212" y1="78" x2="240" y2="78"/>
+        <line class="fwrA" x1="427" y1="78" x2="455" y2="78"/>
+        <line class="fwrA" x1="642" y1="78" x2="670" y2="78"/>
+        <text class="fwrX" x="30" y="130">headings, intro, hobby</text>
+        <text class="fwrX" x="30" y="146">list, one link (today)</text>
+        <text class="fwrX" x="245" y="130">photo, quote, skills</text>
+        <text class="fwrX" x="245" y="146">table, checklist</text>
+        <text class="fwrX" x="460" y="130">badges, emoji, diagram,</text>
+        <text class="fwrX" x="460" y="146">collapsible extras</text>
+        <text class="fwrX" x="675" y="130">the username/username</text>
+        <text class="fwrX" x="675" y="146">repo trick + commit</text>
+        <text class="fwrX" x="30" y="182">Miss a week? Each session page stands alone, and your draft lives in your browser editor - pick up where you left off.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the roadmap: one page, four sessions, then it's live</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Open your editor, type your first markdown <span class="tag demo">★ 6 min · everyone types</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open <a href="https://stackedit.io/app">stackedit.io/app</a> in a new tab - a free split-pane editor, no account needed. Markdown goes on the left, the rendered page appears on the right. (Backup: <a href="https://dillinger.io">dillinger.io</a> - same idea.)</p></div>
+      <div class="step"><p>Clear the sample text. Type <strong># followed by your name</strong> - watch the right pane produce a big bold heading the instant you type the space.</p></div>
+      <div class="step"><p>Press Enter TWICE (blank line!) and write one plain sentence about yourself. Then press Enter once and write another - notice they glue into one paragraph. Add the blank line. Feel the rule.</p></div>
+      <div class="step"><p>Bold one word with <span class="syn-chip">**stars**</span>, italicize another with <span class="syn-chip">*one star*</span>. You're writing markdown.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Why a split-pane editor first?</strong>
+      Markdown Guide's own advice for beginners: start where you SEE the conversion live. Instant feedback turns rules into reflexes in minutes. GitHub's editor (Session 4) has a preview tab too - same idea, one click slower.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Draft YOUR about-me page <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Structure first, three headings: <span class="syn-chip"># Your Name</span>, then <span class="syn-chip">## About me</span>, then <span class="syn-chip">## Three things I love</span>. Blank lines between everything.</p></div>
+      <div class="step"><p>Under "About me": two or three sentences. Who are you, what do you do, what are you learning? <strong>Bold</strong> the thing you want people to remember; <em>italicize</em> something playful.</p></div>
+      <div class="step"><p>Under "Three things I love": a <span class="syn-chip">- </span> list, three items. Nobody's grading the hobbies.</p></div>
+      <div class="step"><p>Add one real link: your LinkedIn, your favorite site, anything - <span class="syn-chip">[text](url)</span>. Square brackets say it, round brackets take you there.</p></div>
+      <div class="step"><p>Discernment lap: read the RIGHT pane like a stranger would. Reorder, reword, make it yours. This exact file becomes your public page in Session 4 - write like someone will read it, because they will.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>A student's first draft was one grey wall of text - technically correct markdown, zero structure. Adding two <span class="syn-chip">##</span> headings and turning one sentence into a three-item list took 90 seconds and made it look designed. Structure IS the design skill, and markdown makes structure cheap.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>Break it on purpose <span class="tag demo">★ 4 min · follow along</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Delete the space in a heading: <span class="syn-chip">#Broken</span>. Watch the right pane show a sad literal #Broken. Put the space back. (Same trick breaks <span class="syn-chip">-item</span> lists.)</p></div>
+      <div class="step"><p>Remove the blank line between two paragraphs - watch them merge. Restore it.</p></div>
+      <div class="step"><p>Try to type a literal star: write <span class="syn-chip">*wink*</span>, see it italicize against your will, then fix it with backslashes: <span class="syn-chip">\*wink\*</span>.</p></div>
+      <div class="step"><p>Indent a normal sentence four spaces - surprise, it's a grey code box now. Un-indent. You've now met every day-one bug in captivity, on purpose.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Why break things?</strong>
+      Every bug you cause on purpose is one you'll diagnose in two seconds when it happens by accident. This lab IS the quiz prep.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Finish your about-me draft</strong> if the session ran short - it's Session 2's starting material. Keep the browser tab open or paste it into any notes app (it's just text!).</li>
+      <li><strong>Run the CommonMark tutorial, lessons 1-7</strong> at <a href="https://commonmark.org/help/tutorial/">commonmark.org/help/tutorial</a> - 10 minutes, interactive, covers today's ground with practice exercises.</li>
+      <li><strong>Collect for Session 2:</strong> a photo URL you like (or your GitHub avatar), one favorite quote, and a list of 4-6 skills with a rough level for each - next week they become an image, a blockquote, and a table.</li>
+      <li><strong>Spot markdown in the wild:</strong> ask an AI chatbot anything and identify three markdown elements in its answer. They're there.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · You press Enter once and keep typing - what does markdown do?</p>
+      <button class="qopt" type="button">A · Starts a new paragraph</button>
+      <button class="qopt" type="button">B · Inserts a line break</button>
+      <button class="qopt" type="button">C · Nothing - the lines join into one paragraph; a BLANK line starts a new one</button>
+      <p class="qwhy">Enter once does nothing. Blank line = new paragraph; two trailing spaces or &lt;br&gt; = line break within one.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">2 · Why does #Heading render as literal text instead of a heading?</p>
+      <button class="qopt" type="button">A · Headings need two # characters minimum</button>
+      <button class="qopt" type="button">B · The space after # is required - # Heading works</button>
+      <button class="qopt" type="button">C · Headings only work at the top of a file</button>
+      <p class="qwhy">Space after the marker - the same rule saves your lists (- item) too. The #1 beginner bug, now yours to never make.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · You want to type a literal * star in your text. Best move?</p>
+      <button class="qopt" type="button">A · Backslash first: \* renders as a plain star</button>
+      <button class="qopt" type="button">B · Impossible - stars always mean italic</button>
+      <button class="qopt" type="button">C · Use three stars instead</button>
+      <p class="qwhy">Backslash escapes any markdown character: \ ` * _ { } [ ] &lt; &gt; ( ) # + - . ! | - the get-out-of-formatting-free card.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of the canonical markdown learning materials - the interactive tutorial at <a href="https://commonmark.org/help/">commonmark.org</a>, the reference at <a href="https://www.markdownguide.org/">markdownguide.org</a>, and the original spec at <a href="https://daringfireball.net/projects/markdown/">daringfireball.net</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CommonMark tutorial, lessons 1-7</span><span class="note">emphasis, paragraphs, headings, lists, links - Parts 2-3 + demos</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Markdown Guide: getting started</span><span class="note">what markdown is, why use it, how processors work - Part 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Markdown Guide: basic syntax (first half)</span><span class="note">headings through links, incl. best-practice notes - Parts 2-3</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Daring Fireball: markdown project page</span><span class="note">history, philosophy, the readability goal - Part 1</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">CommonMark tutorial, lessons 8-10</span><span class="note">images, code, nested lists - Session 2 + self-study cards here</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Markdown Guide: basic syntax (second half)</span><span class="note">images, blockquotes, code - Session 2 territory</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Headings</b><span># Title · ## Section · ### Sub - space after # required, blank lines around.</span></div>
+      <div class="cheat-item"><b>Paragraphs</b><span>Blank line = new paragraph. Enter once = nothing. Two trailing spaces = line break.</span></div>
+      <div class="cheat-item"><b>Emphasis</b><span>*italic* · **bold** · ***both*** - stars hug the text, no inner spaces.</span></div>
+      <div class="cheat-item"><b>Lists</b><span>- item (bulleted) · 1. item (numbered, real numbers optional) - space after the marker.</span></div>
+      <div class="cheat-item"><b>Links</b><span>[text](url) - square brackets say it, round brackets take you there. Quick: &lt;url&gt;.</span></div>
+      <div class="cheat-item"><b>Escape hatch</b><span>Backslash before any special character: \* \# \_ renders it literally.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 4 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-structure.html">Next: Structure →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

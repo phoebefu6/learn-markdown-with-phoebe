@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep dive · Markdown for AI work - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Deep dive 1</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Deep-dive track</div>
+    <h1>Markdown for AI work: <span class="accent">the language your AI already speaks</span></h1>
+    <p class="sub">You finished the course, your page is live - now notice something: every AI chat you've ever had was markdown the whole time. This page turns that observation into a skill. You'll read AI answers structurally, write prompts with real structure, and meet the instruction files that configure AI coding tools. All with the exact seven elements from Session 1.</p>
+    <div class="chip-row">
+      <span class="chip level">🔬 Deep dive</span>
+      <span class="chip audience">Finished all 4 sessions</span>
+      <span class="chip audience">Nothing to install</span>
+      <span class="chip time">~20 min self-paced</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why this page exists</h2>
+    </div>
+    <p class="lede">In Session 1 you learned that AI answers are markdown rendered by the chat window. That was a fun fact. Now it's leverage: the same syntax that formats an answer coming OUT can structure your prompt going IN - and it can configure whole AI coding tools through plain .md files. Your Session 1-2 skills transfer directly; nothing new to memorize.</p>
+    <div class="legend">
+      <span class="pill solid">Self-paced - read in any order</span>
+      <span class="pill amber">Try it - one hands-on lap near the end</span>
+      <span class="pill inkpill">The project: your page keeps growing</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk away with</strong>
+      Three transferable habits: read AI answers by their structure (headings, lists, tables, fences) instead of skimming a wall of text; write prompts with a heading-and-fence skeleton that separates instructions from data; and recognize the instruction-file pattern (CLAUDE.md, AGENTS.md) so no AI coding tool's setup ever looks mysterious again.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: AI CHATS ARE MARKDOWN ============ -->
+  <section class="section" id="chats-are-markdown">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · builds on Session 1's "markdown in the wild" homework</span>
+      <h2>Your AI chats are already markdown <span class="tag concept">5 min read</span></h2>
+    </div>
+    <p class="lede">When a model answers with clean headings, bullet lists, a comparison table, and a grey code box, it isn't using a secret rich-text mode. It writes <span class="syn-chip"># headings</span> <span class="syn-chip">- lists</span> <span class="syn-chip">| tables |</span> <span class="syn-chip">``` fences</span> as plain text, and the chat window renders them - the exact pipeline from Session 1's first diagram.</p>
+
+    <details class="card" open>
+      <summary><span class="mode self">Self-study</span>Reading answers structurally<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Once you know the elements, an AI answer stops being a wall of text and becomes a document with a skeleton you can scan:</p>
+        <ul>
+          <li><strong>Headings</strong> mark the answer's sections - scan them first and you know the shape of the whole reply before reading a word of body text.</li>
+          <li><strong>Lists</strong> mean "parallel items" - options, steps, reasons. If the model numbered them, order matters; if it bulleted them, it doesn't.</li>
+          <li><strong>Tables</strong> mean "compare across dimensions" - and you can copy them straight into your own markdown files, because they already ARE markdown.</li>
+          <li><strong>Code fences</strong> mean "use this exactly as written" - commands, code, config. The fence is the model telling you where copy-paste territory begins and ends.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The copy-paste superpower:</strong> ask an AI for a comparison of three tools, click the copy button, and paste the answer into your profile README draft. The headings, list, and table arrive as valid markdown and render perfectly on GitHub - because there was never any conversion step at all. One syntax, end to end.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>From blob to blueprint: your first structured prompt<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Most prompts are one breathless blob: <em>"rewrite this email to be formal but short also keep the friday date hi team the launch moved to friday thanks"</em>. Where does the instruction end and the email begin? The model has to guess. Structure removes the guessing:</p>
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">The structured prompt - you type</span><span class="mk"># </span><span class="mkw">Task</span>
+Rewrite the email below to be more formal.
+
+<span class="mk">## </span><span class="mkw">Constraints</span>
+<span class="mk">- </span>Keep it under 50 words
+<span class="mk">- </span>Keep the Friday date
+
+<span class="mk">## </span><span class="mkw">Email</span>
+<span class="mkb">```</span>
+hi team the launch moved to friday thanks
+<span class="mkb">```</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">What the model sees</span>
+            <div class="rh" style="font-size:1.05rem">Task</div>
+            <p style="margin:.2rem 0 .4rem">Rewrite the email below to be more formal.</p>
+            <div style="font-size:.95rem;font-weight:800">Constraints</div>
+            <ul style="margin:.2rem 0 .4rem 1.2rem"><li>Keep it under 50 words</li><li>Keep the Friday date</li></ul>
+            <div style="font-size:.95rem;font-weight:800">Email</div>
+            <p style="font-family:ui-monospace,Menlo,monospace;font-size:.85rem;background:#EEF1F6;border-radius:6px;padding:.4rem .5rem;margin-top:.2rem">hi team the launch moved to friday thanks</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Same request, zero ambiguity.</strong> The task, the rules, and the raw material each live under their own heading - nothing gets mistaken for anything else.</li>
+          <li><strong>Every character is Session 1-2 material:</strong> <span class="syn-chip">#</span> headings, a <span class="syn-chip">-</span> list, a <span class="syn-chip">```</span> fence. You already knew how to write this.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: STRUCTURE MAKES PROMPTS BETTER ============ -->
+  <section class="section" id="structured-prompts">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the Session 1 seven, redeployed</span>
+      <h2>Structure makes prompts better <span class="tag concept">5 min read</span></h2>
+    </div>
+    <p class="lede">Three structural moves cover most prompt problems. Each one maps to an element you already own.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Headings: separate instructions from data<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The core move:</strong> give the task, the constraints, and the input material each their own <span class="syn-chip">#</span> or <span class="syn-chip">##</span> heading. Long prompts become skimmable for you AND unambiguous for the model.</li>
+          <li><strong>A reusable skeleton:</strong> <span class="syn-chip"># Task</span> → <span class="syn-chip">## Constraints</span> → <span class="syn-chip">## Input</span> → <span class="syn-chip">## Output format</span>. Adapt the names; keep the separation.</li>
+          <li><strong>Bonus:</strong> when you come back to a good prompt next month, the headings make it instantly reusable - prompts with structure become templates for free.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Fences: quote text exactly<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The rule:</strong> anything you paste for the model to work ON - an email, code, an error message, meeting notes - goes inside a <span class="syn-chip">```</span> fence. The fence draws a hard boundary: "this is data to process, not instructions to follow."</li>
+          <li><strong>Why it matters:</strong> unfenced, a pasted email that happens to contain the words "ignore the deadline" reads like part of your instructions. Fenced, it's clearly just the material.</li>
+          <li><strong>Exact means exact:</strong> fences also stop the chat from rendering the pasted text's own formatting, so the model receives every character as you pasted it - the Session 2 "show markdown without triggering it" trick, promoted to a safety habit.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The one-sentence version</strong>
+          Instructions outside the fence, material inside the fence. If you adopt a single habit from this page, make it this one.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Tables and lists: structured input in, structured output back<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Lists for constraints:</strong> five rules in one paragraph get partially ignored; five rules as <span class="syn-chip">-</span> bullets each get their own weight. Numbered lists when order or priority matters.</li>
+          <li><strong>Tables for records:</strong> feeding the model several items with the same fields (name, role, start date)? A Session 2 pipe table beats prose - every value sits in a labeled column.</li>
+          <li><strong>Ask for structure back:</strong> end with "answer as a markdown table with columns X, Y, Z" and the reply arrives ready to paste into your README, your notes, your docs.</li>
+        </ul>
+        <p>That's the whole trick: the seven everyday elements from Session 1, plus fences and tables from Session 2. Prompting well is largely markdown applied with intent.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: INSTRUCTION FILES ============ -->
+  <section class="section" id="instruction-files">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the pattern behind AI coding tools</span>
+      <h2>Instruction files: a README for your AI <span class="tag concept">5 min read</span></h2>
+    </div>
+    <p class="lede">AI coding tools read a plain markdown file from your project - commonly named <span class="syn-chip">CLAUDE.md</span> or <span class="syn-chip">AGENTS.md</span> depending on the tool - and treat it as standing instructions. A README tells humans how the project works; an instruction file tells the AI. Same skill, new reader.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What's inside one<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>No schema, no special syntax - just markdown a machine happens to read. Headings group topics, bullets state rules:</p>
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">A simple instruction file (.md)</span><span class="mk"># </span><span class="mkw">Project</span>
+A sales dashboard in Python.
+
+<span class="mk">## </span><span class="mkw">Rules</span>
+<span class="mk">- </span>Use pandas for all data work
+<span class="mk">- </span>Write a test for every new function
+<span class="mk">- </span>Ask before adding a dependency</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">What it does</span>
+            <p>The AI tool reads this file at the start of every session in the project. It now knows what the project is and follows your three rules without you repeating them in every prompt - standing instructions, written once.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Short beats long:</strong> the best instruction files read like a good README section - a few headings, tight bullets, concrete rules. Walls of prose get skimmed by AIs too.</li>
+          <li><strong>It's version-controlled prose:</strong> the file lives in the repo, so your whole team (and their AI tools) share one set of rules, with history.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The pattern travels; the filename varies<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Vendor-neutral core:</strong> different tools look for different filenames and support different extras, but every one of them reads plain markdown - headings, lists, links. Learn the pattern once and each tool's docs are a five-minute read.</li>
+          <li><strong>Check the docs, not your memory:</strong> filenames and lookup rules are tool-specific and change over time. When you adopt a tool, its official docs are the source of truth for what to name the file and where to put it.</li>
+          <li><strong>The bigger idea - docs as context:</strong> well-structured markdown docs (your README included) are exactly what AI tools digest best. Every clearly-headed, well-listed page you write is now documentation for humans AND context for machines. Structure pays twice.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ TRY IT ============ -->
+  <section class="section" id="try-it">
+    <div class="section-kicker">
+      <span class="klabel">Try it</span>
+      <h2>Restructure one real prompt <span class="tag exercise">◐ 10 min hands-on</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Find a real prompt you actually sent an AI recently - ideally a long, blobby one that got a mediocre answer. Chat history is full of candidates.</p></div>
+      <div class="step"><p>Rewrite it with the skeleton: <span class="syn-chip"># Task</span> for what you want, <span class="syn-chip">## Constraints</span> as a <span class="syn-chip">-</span> list, and any pasted material inside a <span class="syn-chip">```</span> fence under its own heading.</p></div>
+      <div class="step"><p>Send both versions in fresh chats and compare the answers side by side. Notice what the structured version got right that the blob missed - usually the constraints.</p></div>
+      <div class="step"><p>Keep the winner: save the structured version as a template in a notes file called <span class="syn-chip">prompts.md</span>. You've just started a prompt library - in markdown, naturally.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Grow the project</strong>
+      Add a "How I work with AI" section to your live profile page - two or three bullets on your prompt habits, or a link to a public prompts collection. Your page keeps growing; that was always the deal.
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why wrap pasted text in a ``` fence inside a prompt?</p>
+      <button class="qopt" type="button">A · It makes the text render in bold so the model notices it</button>
+      <button class="qopt" type="button">B · It marks exact boundaries, so the model treats it as material to work ON, not instructions to follow</button>
+      <button class="qopt" type="button">C · Chat windows reject pasted text unless it's fenced</button>
+      <p class="qwhy">The fence draws a hard line between your instructions and your data - and delivers the pasted text exactly, character for character.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · What is a CLAUDE.md or AGENTS.md file?</p>
+      <button class="qopt" type="button">A · A compiled configuration format specific to each AI vendor</button>
+      <button class="qopt" type="button">B · A special syntax that only AI models can parse</button>
+      <button class="qopt" type="button">C · A plain markdown file of project rules that an AI coding tool reads as standing instructions</button>
+      <p class="qwhy">Just markdown - headings and bullets in a file the tool reads automatically. A README for humans, an instruction file for the AI.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Why do AI chat answers appear with headings, lists, and code boxes?</p>
+      <button class="qopt" type="button">A · The model writes markdown as plain text and the chat window renders it</button>
+      <button class="qopt" type="button">B · The chat app analyzes the answer and guesses where formatting should go</button>
+      <button class="qopt" type="button">C · Models output finished HTML pages</button>
+      <p class="qwhy">Session 1's pipeline, running in every chat: text with markers in, processor converts, formatted page out.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>What this page is based on</h2>
+    </div>
+    <p class="lede">Honest label: unlike the four sessions, this page doesn't track one official syllabus - there isn't one for "markdown in AI work" yet. It's working practice built on the course's verified element set, plus the instruction-file pattern documented across AI coding tools' own docs, kept deliberately vendor-neutral.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Session 1-2 element set, reapplied</span><span class="note">headings, lists, links, fences, tables - all verified in the main course sources</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Answers-are-markdown pipeline</span><span class="note">the Session 1 type-convert-render model, observed in any AI chat</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Instruction-file pattern</span><span class="note">plain .md files as agent configuration - a pattern across vendor docs, taught tool-agnostically</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Vendor-specific filenames and lookup rules</span><span class="note">tool-dependent and moving - always defer to the tool's current official docs</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Prompt engineering as a discipline</span><span class="note">a much bigger field; this page covers only its markdown-structure slice</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Deep dive 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Prompt skeleton</b><span># Task · ## Constraints (- bullets) · ## Input (fenced) · ## Output format.</span></div>
+      <div class="cheat-item"><b>Fence-your-data rule</b><span>Instructions outside the fence, pasted material inside. Always.</span></div>
+      <div class="cheat-item"><b>Read structurally</b><span>Headings = sections, lists = parallel items, tables = comparisons, fences = copy-paste exactly.</span></div>
+      <div class="cheat-item"><b>Instruction-file pattern</b><span>Plain .md in the repo (CLAUDE.md / AGENTS.md per tool): # Project + ## Rules + tight bullets.</span></div>
+      <div class="cheat-item"><b>Ask for structure back</b><span>"Answer as a markdown table with columns..." - the reply pastes straight into your files.</span></div>
+      <div class="cheat-item"><b>Docs pay twice</b><span>Well-structured markdown serves human readers and AI context at once.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Deep dive 1 of 3 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="42-flavors-and-export.html">Flavors + export →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

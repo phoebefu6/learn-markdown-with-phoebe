@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep dive · Mermaid beyond basics - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Deep dive 3</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Deep-dive track</div>
+    <h1>Mermaid beyond basics: <span class="accent">every diagram is a paragraph</span></h1>
+    <p class="sub">In Session 3 you drew a three-node flowchart with one fence. That fence goes much deeper: node shapes that carry meaning, four flow directions, labeled and dotted arrows, subgraphs - plus sequence diagrams, pie charts, and Gantt timelines, all rendering right in your README. Still just text you type.</p>
+    <div class="chip-row">
+      <span class="chip level">🔬 Deep dive</span>
+      <span class="chip audience">Finished all 4 sessions</span>
+      <span class="chip audience">Nothing to install</span>
+      <span class="chip time">~20 min self-paced</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why this page exists</h2>
+    </div>
+    <p class="lede">Session 3 gave you <span class="syn-chip">graph TD; A--&gt;B;</span> and moved on - there was a page to ship. But Mermaid is a full diagram language living inside a markdown fence, and the difference between a basic flowchart and a great one is a handful of learnable marks. This page is the vocabulary lesson: shapes, arrows, directions, and three whole new diagram types.</p>
+    <div class="legend">
+      <span class="pill solid">Self-paced - read in any order</span>
+      <span class="pill amber">Try it - upgrade your Session 3 diagram at the end</span>
+      <span class="pill inkpill">The project: your page keeps growing</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk away with</strong>
+      Flowchart fluency (six node shapes, four directions, four arrow styles, labels, subgraphs), three new GitHub-rendered diagram types (sequence, pie, Gantt), and the working loop: draft at mermaid.live, check GitHub's Mermaid version with the info block, commit to your profile.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: FLOWCHART FLUENCY ============ -->
+  <section class="section" id="flowchart-fluency">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers mermaid.js.org flowchart syntax</span>
+      <h2>Flowchart fluency: shapes, arrows, directions <span class="tag concept">7 min read</span></h2>
+    </div>
+    <p class="lede">Everything on this page lives inside the Session 3 fence: <span class="syn-chip">```mermaid</span> ... <span class="syn-chip">```</span>. What changes is your vocabulary inside it.</p>
+
+    <details class="card" open>
+      <summary><span class="mode self">Self-study</span>Four directions: which way does it flow?<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type (inside a mermaid fence)</span><span class="mk">flowchart LR</span>
+<span class="mkw">A</span>[Draft] <span class="mkb">--&gt;</span> <span class="mkw">B</span>[Review] <span class="mkb">--&gt;</span> <span class="mkw">C</span>[Ship]</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">GitHub renders</span>
+            <p>Three boxes flowing <strong>left to right</strong>: Draft → Review → Ship. Change <span class="syn-chip">LR</span> to <span class="syn-chip">TD</span> and the same three boxes stack top-down instead - one code, any direction.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The four codes:</strong> <span class="syn-chip">TD</span> top-down (Session 3's default, same as TB), <span class="syn-chip">BT</span> bottom-to-top, <span class="syn-chip">LR</span> left-to-right, <span class="syn-chip">RL</span> right-to-left.</li>
+          <li><strong>Pick by content:</strong> timelines and pipelines read best LR; hierarchies and decisions read best TD. In a README, LR fits wide screens; TD survives narrow phones better.</li>
+          <li><strong>flowchart vs graph:</strong> <span class="syn-chip">flowchart</span> is the current keyword; the older <span class="syn-chip">graph</span> from Session 3 still works. Either is fine on GitHub.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Six node shapes, each with a meaning<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type (inside a mermaid fence)</span><span class="mk">flowchart TD</span>
+<span class="mkw">A</span><span class="mkb">[</span>Step<span class="mkb">]</span>
+<span class="mkw">B</span><span class="mkb">(</span>Soft step<span class="mkb">)</span>
+<span class="mkw">C</span><span class="mkb">([</span>Start or end<span class="mkb">])</span>
+<span class="mkw">D</span><span class="mkb">((</span>Hub<span class="mkb">))</span>
+<span class="mkw">E</span><span class="mkb">{</span>Decision?<span class="mkb">}</span>
+<span class="mkw">F</span><span class="mkb">[(</span>Database<span class="mkb">)]</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">GitHub renders</span>
+            <p>Six differently-shaped nodes: a <strong>rectangle</strong>, a <strong>rounded rectangle</strong>, a <strong>stadium</strong> (pill), a <strong>circle</strong>, a <strong>diamond</strong>, and a <strong>cylinder</strong>. The brackets around the label ARE the shape.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The convention readers already know:</strong> rectangle <span class="syn-chip">[x]</span> = process step, stadium <span class="syn-chip">([x])</span> = start/end, diamond <span class="syn-chip">{x}</span> = decision with yes/no exits, cylinder <span class="syn-chip">[(x)]</span> = data store, circle <span class="syn-chip">((x))</span> = connector or hub, rounded <span class="syn-chip">(x)</span> = a gentler step.</li>
+          <li><strong>Memory hook:</strong> the code looks like the shape - curly braces pinch like a diamond, double parens are round, <span class="syn-chip">[( )]</span> is a box with a curved lid.</li>
+          <li><strong>Use meaningfully, not decoratively:</strong> one diagram, one shape language. A diamond that isn't a decision just confuses people.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Arrow styles, labels, and subgraphs<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type (inside a mermaid fence)</span><span class="mk">flowchart LR</span>
+<span class="mk">subgraph </span><span class="mkw">Writing</span>
+A[Draft] <span class="mkb">--&gt;</span><span class="mk">|edit|</span> B[Final]
+<span class="mk">end</span>
+B <span class="mkb">==&gt;</span> C{Publish?}
+C <span class="mkb">-.-&gt;</span><span class="mk">|not yet|</span> A
+C <span class="mkb">---</span> D[(Archive)]</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">GitHub renders</span>
+            <p>Draft and Final sit together inside a labeled box called <strong>Writing</strong>. A <strong>thick</strong> arrow leads to the Publish? diamond, a <strong>dotted</strong> "not yet" arrow loops back to Draft, and a plain <strong>line</strong> (no arrowhead) ties the diamond to the Archive cylinder. The <span class="syn-chip">|labels|</span> ride on their arrows.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Four link styles:</strong> <span class="syn-chip">--&gt;</span> normal arrow, <span class="syn-chip">---</span> plain line, <span class="syn-chip">-.-&gt;</span> dotted (the "maybe/sometimes" arrow), <span class="syn-chip">==&gt;</span> thick (the happy path).</li>
+          <li><strong>Labels:</strong> <span class="syn-chip">A --&gt;|yes| B</span> - pipes right after the arrow. Decision diamonds practically demand labeled exits.</li>
+          <li><strong>Subgraphs:</strong> <span class="syn-chip">subgraph Name</span> ... <span class="syn-chip">end</span> draws a titled box around related nodes - phases, teams, systems. Nesting works; one level is usually plenty.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: BEYOND FLOWCHARTS ============ -->
+  <section class="section" id="beyond-flowcharts">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers mermaid.js.org sequence/pie/gantt basics + GitHub Docs diagrams</span>
+      <h2>Beyond flowcharts: three more types GitHub renders <span class="tag concept">6 min read</span></h2>
+    </div>
+    <p class="lede">The first line inside the fence declares the diagram type. GitHub renders the standard Mermaid set at whatever Mermaid version it currently ships (Part 3 shows how to check it) - these three are the ones you'll reach for most.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Sequence diagrams: who talks to whom<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type (inside a mermaid fence)</span><span class="mk">sequenceDiagram</span>
+<span class="mk">participant </span><span class="mkw">You</span>
+<span class="mk">participant </span><span class="mkw">GitHub</span>
+You<span class="mkb">-&gt;&gt;</span>GitHub: push README.md
+GitHub<span class="mkb">-&gt;&gt;</span>You: renders your page</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">GitHub renders</span>
+            <p>Two vertical lifelines labeled <strong>You</strong> and <strong>GitHub</strong>, with horizontal message arrows between them, in order, top to bottom: "push README.md" going right, "renders your page" coming back.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The grammar:</strong> <span class="syn-chip">participant Name</span> declares each actor; <span class="syn-chip">A-&gt;&gt;B: message</span> draws one arrow with its text. Order on the page = order in time.</li>
+          <li><strong>When it beats a flowchart:</strong> anything that's a conversation - API calls, approval chains, "then the form emails the manager". Flowcharts show logic; sequences show dialogue over time.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Pie charts: proportions in four lines<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type (inside a mermaid fence)</span><span class="mk">pie title </span><span class="mkw">My week</span>
+<span class="mkw">"Building"</span> : <span class="mkb">45</span>
+<span class="mkw">"Meetings"</span> : <span class="mkb">30</span>
+<span class="mkw">"Learning"</span> : <span class="mkb">25</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">GitHub renders</span>
+            <p>A titled pie chart with three colored slices and a legend - Building the biggest slice, then Meetings, then Learning. Mermaid computes the percentages for you.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The grammar:</strong> <span class="syn-chip">pie title Text</span>, then one <span class="syn-chip">"label" : value</span> per line. Values are any numbers; slices are proportional.</li>
+          <li><strong>README-worthy uses:</strong> a skills mix, how a project's time went, language breakdown - light data, zero chart tooling.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Gantt charts: plans on a timeline<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type (inside a mermaid fence)</span><span class="mk">gantt</span>
+<span class="mk">title </span><span class="mkw">Page relaunch</span>
+<span class="mk">dateFormat </span><span class="mkw">YYYY-MM-DD</span>
+<span class="mk">section </span><span class="mkw">Content</span>
+Draft :<span class="mkb">a1</span>, 2026-07-13, 3d
+Review :<span class="mkb">after a1</span>, 2d</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">GitHub renders</span>
+            <p>A timeline chart titled <strong>Page relaunch</strong> with a Content section: a three-day Draft bar starting July 13, and a two-day Review bar that begins right where Draft ends - <span class="syn-chip">after a1</span> chains them automatically.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The grammar:</strong> <span class="syn-chip">gantt</span> + <span class="syn-chip">title</span> + <span class="syn-chip">dateFormat</span>, then <span class="syn-chip">section</span> headers with one task per line: name, an id, a start (a date or <span class="syn-chip">after otherId</span>), a duration like <span class="syn-chip">3d</span>.</li>
+          <li><strong>Perfect for:</strong> a project README's plan section - the plan lives next to the code and updates with a text edit, not a screenshot re-export.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: WORKFLOW ============ -->
+  <section class="section" id="workflow">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the working loop</span>
+      <h2>The Mermaid workflow: draft, check, commit <span class="tag concept">4 min read</span></h2>
+    </div>
+    <p class="lede">Typing diagram code straight into a README commit is flying blind. The pros use a three-step loop.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Draft at mermaid.live, verify the version, then commit<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>1 · Draft in the playground:</strong> <a href="https://mermaid.live">mermaid.live</a> is the official live editor - code on the left, diagram on the right, errors flagged as you type. Iterate there, paste the finished code into your fence. It's StackEdit for diagrams.</li>
+          <li><strong>2 · Check GitHub's version:</strong> a fence containing just the word <span class="syn-chip">info</span> with the <span class="syn-chip">mermaid</span> language tag renders a block reporting the Mermaid version GitHub currently runs. If a shiny new feature from the docs won't render, compare versions before debugging your syntax - the playground may be newer than GitHub.</li>
+          <li><strong>3 · Commit and preview:</strong> paste into your README inside <span class="syn-chip">```mermaid</span> ... <span class="syn-chip">```</span>, use GitHub's Preview tab before committing - the Session 4 muscle memory.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>Third-party plugin warning</strong>
+          GitHub's docs note that browser extensions and plugins that also render Mermaid can conflict with GitHub's built-in rendering - if a colleague sees a double diagram or a broken one you can't reproduce, ask what extensions they run before touching your code.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>When a diagram beats a paragraph (and when it doesn't)<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Diagram wins:</strong> branching logic ("if approved, then..."), anything with more than three arrows of flow, conversations between systems, timelines. If your paragraph keeps saying "then" and "otherwise", it wants to be a flowchart.</li>
+          <li><strong>Paragraph wins:</strong> linear explanations, nuance, anything needing more than a label's worth of words per step. A five-node diagram whose nodes hold full sentences is a paragraph in boxes - worse than either.</li>
+          <li><strong>The README test:</strong> one good diagram near the top of a project README ("how the pieces fit") earns its place forever. A diagram per section is decoration. Deep config and theming exist in Mermaid for when you truly need them - mermaid.js.org covers that layer; it's linked, not taught, here.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ TRY IT ============ -->
+  <section class="section" id="try-it">
+    <div class="section-kicker">
+      <span class="klabel">Try it</span>
+      <h2>Upgrade your Session 3 diagram <span class="tag exercise">◐ 15 min hands-on</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open <a href="https://mermaid.live">mermaid.live</a> and paste in your profile README's journey diagram from Session 3 (or start from <span class="syn-chip">flowchart LR</span> with three nodes if you skipped it).</p></div>
+      <div class="step"><p>Add one decision: a diamond node like <span class="syn-chip">D{Keep learning?}</span> with two labeled exits - <span class="syn-chip">D --&gt;|yes| next</span> and a dotted <span class="syn-chip">-.-&gt;</span> loop back for "revisit".</p></div>
+      <div class="step"><p>Group the finished chapters in a <span class="syn-chip">subgraph Done</span> ... <span class="syn-chip">end</span> box. Watch the playground redraw as you type; fix errors while they're one keystroke old.</p></div>
+      <div class="step"><p>Paste the upgraded code back into your README's mermaid fence, check the Preview tab, and commit. Your live page just got measurably smarter - that's the project growing again.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your flowchart should read left to right. Which first line?</p>
+      <button class="qopt" type="button">A · flowchart TD</button>
+      <button class="qopt" type="button">B · flowchart LR</button>
+      <button class="qopt" type="button">C · flowchart RL</button>
+      <p class="qwhy">LR = left to right. TD stacks top-down, BT climbs bottom-to-top, RL flows right-to-left - four codes, one habit.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Which node syntax draws a decision diamond?</p>
+      <button class="qopt" type="button">A · A[Decision]</button>
+      <button class="qopt" type="button">B · A((Decision))</button>
+      <button class="qopt" type="button">C · A{Decision}</button>
+      <p class="qwhy">Curly braces pinch like a diamond. Square brackets = rectangle step, double parens = circle, ([x]) = start/end stadium, [(x)] = database cylinder.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · How do you check which Mermaid version GitHub currently renders?</p>
+      <button class="qopt" type="button">A · Commit a mermaid fence containing just the word "info" - it renders a version report</button>
+      <button class="qopt" type="button">B · It's printed in every rendered diagram's corner</button>
+      <button class="qopt" type="button">C · You can't - GitHub doesn't disclose it</button>
+      <p class="qwhy">The info block is the built-in version check - compare it against mermaid.live before assuming a new feature will render in your README.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This page teaches the beginner-relevant working content of the syntax docs at <a href="https://mermaid.js.org/">mermaid.js.org</a> and GitHub's guide to <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams">creating diagrams</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">mermaid.js.org: flowchart syntax</span><span class="note">directions, six node shapes, four link styles, labels, subgraphs - Part 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">mermaid.js.org: sequence, pie, gantt basics</span><span class="note">the minimal working grammar of each - Part 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Docs: creating diagrams</span><span class="note">the mermaid fence, the info-block version check, the plugin-conflict warning - Parts 2-3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Mermaid configuration and theming</span><span class="note">init directives, themes, styling - linked out at mermaid.js.org, beyond this course's scope</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The rest of the Mermaid zoo</span><span class="note">class, state, ER, mindmap, timeline diagrams and more - same fence, docs when you need them</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Deep dive 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Shapes</b><span>[step] · (soft) · ([start/end]) · ((hub)) · {decision} · [(database)] - brackets ARE the shape.</span></div>
+      <div class="cheat-item"><b>Directions</b><span>flowchart TD / BT / LR / RL - pipelines read LR, hierarchies TD.</span></div>
+      <div class="cheat-item"><b>Link styles</b><span>--&gt; arrow · --- line · -.-&gt; dotted · ==&gt; thick · labels: A --&gt;|yes| B.</span></div>
+      <div class="cheat-item"><b>Sequence skeleton</b><span>sequenceDiagram · participant A · A-&gt;&gt;B: message - order on page = order in time.</span></div>
+      <div class="cheat-item"><b>Subgraphs</b><span>subgraph Name ... end draws a titled box around related nodes.</span></div>
+      <div class="cheat-item"><b>Info block trick</b><span>A mermaid fence containing just "info" reports GitHub's Mermaid version. Draft at mermaid.live first.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Deep dive 3 of 3 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="42-flavors-and-export.html">← Flavors + export</a> &nbsp;·&nbsp; <a href="../index.html">← All sessions</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

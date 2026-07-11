@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep dive · Flavors and export - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Deep dive 2</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Deep-dive track</div>
+    <h1>Flavors and export: <span class="accent">one syntax, many dialects, any format</span></h1>
+    <p class="sub">Session 4 warned you: every app implements markdown a little differently. This page gives you the full map - where the dialects came from, which one each app speaks, and how one command turns your .md files into Word docs, PDFs, or entire websites. Your files just became the most portable documents you own.</p>
+    <div class="chip-row">
+      <span class="chip level">🔬 Deep dive</span>
+      <span class="chip audience">Finished all 4 sessions</span>
+      <span class="chip audience">Optional install (pandoc)</span>
+      <span class="chip time">~20 min self-paced</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why this page exists</h2>
+    </div>
+    <p class="lede">You've noticed it already: a table that renders on GitHub shows up as pipe soup somewhere else, and Slack turns your single stars into something unexpected. That's not markdown being broken - it's markdown being a family of dialects. Knowing the family tree tells you instantly what will work where, and the export tools mean you're never locked into any one of them.</p>
+    <div class="legend">
+      <span class="pill solid">Self-paced - read in any order</span>
+      <span class="pill amber">Try it - one export experiment near the end</span>
+      <span class="pill inkpill">The project: your page keeps growing</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk away with</strong>
+      The flavor family tree (original markdown → CommonMark → GFM → the rest), a core-vs-extended checklist so you can predict what survives in any app, one verified pandoc command that converts .md to docx/html/pdf, and the teaser that your README skills are one step away from being a real website.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: THE FLAVOR MAP ============ -->
+  <section class="section" id="flavor-map">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers Markdown Guide getting-started + extended-syntax flavor notes</span>
+      <h2>The flavor map: one family, many dialects <span class="tag concept">6 min read</span></h2>
+    </div>
+    <p class="lede">John Gruber's 2004 original left edge cases undefined, so every implementer filled the gaps their own way. Two decades later the family looks like this:</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The markdown flavor family tree: the 2004 original leads to the CommonMark standard, which GitHub Flavored Markdown extends; other dialects like Markdown Extra, MultiMarkdown, and R Markdown branch off the original">
+        <style>
+          .flT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .flS { font: 400 12px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .flK { font: 700 12.5px Inter, sans-serif; fill: #16233B; }
+          .flX { font: 400 12.5px Inter, sans-serif; fill: #5C6B84; }
+          .flW { font: 700 12px Inter, sans-serif; fill: #D97706; }
+          .flA { stroke: #C3CDE0; stroke-width: 2; fill: none; marker-end: url(#flAh); }
+        </style>
+        <defs>
+          <marker id="flAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C3CDE0" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="30" y="40" width="230" height="88" rx="12" fill="#052C70"/>
+        <text class="flT" x="50" y="68">2004 · Markdown</text>
+        <text class="flS" x="50" y="90">Gruber's original: the core</text>
+        <text class="flS" x="50" y="108">elements, edge cases fuzzy</text>
+        <rect x="330" y="40" width="220" height="88" rx="12" fill="#083FA1"/>
+        <text class="flT" x="350" y="68">CommonMark</text>
+        <text class="flS" x="350" y="90">the standard: one precise</text>
+        <text class="flS" x="350" y="108">spec for the shared core</text>
+        <rect x="620" y="40" width="230" height="88" rx="12" fill="#2E63C4"/>
+        <text class="flT" x="640" y="68">GFM (GitHub)</text>
+        <text class="flS" x="640" y="90">CommonMark + tables, task</text>
+        <text class="flS" x="640" y="108">lists, strikethrough, alerts</text>
+        <line class="flA" x1="262" y1="84" x2="324" y2="84"/>
+        <line class="flA" x1="552" y1="84" x2="614" y2="84"/>
+        <line class="flA" x1="145" y1="130" x2="145" y2="176"/>
+        <rect x="30" y="182" width="230" height="40" rx="10" fill="#8FAEE3"/>
+        <text class="flK" x="50" y="207">Markdown Extra · MultiMarkdown</text>
+        <rect x="30" y="230" width="230" height="40" rx="10" fill="#8FAEE3"/>
+        <text class="flK" x="50" y="255">R Markdown (data science)</text>
+        <text class="flX" x="290" y="207">← other dialects branched early, each adding</text>
+        <text class="flX" x="290" y="225">its own extras - named here so you recognize</text>
+        <text class="flX" x="290" y="243">them in the wild, not taught in this course</text>
+        <text class="flW" x="620" y="160">★ You live here: your profile</text>
+        <text class="flW" x="620" y="178">README is GFM</text>
+        <text class="flX" x="30" y="288">Read it left to right: the fuzzier the original, the more the family standardized and extended. Core stays shared; extras vary by branch.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the flavor family tree: original, standard, GitHub's extension, and the other branches</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode self">Self-study</span>Core vs extended: the line that predicts everything<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every "will this render there?" question comes down to one line:</p>
+        <ul>
+          <li><strong>Core (works virtually everywhere):</strong> headings, paragraphs, line breaks, bold, italic, blockquotes, ordered and unordered lists, inline code, indented code, horizontal rules, links, images - your Session 1-2 basic set. This is what CommonMark standardized.</li>
+          <li><strong>Extended (app-by-app):</strong> tables, fenced code blocks with syntax highlighting, footnotes, heading IDs, definition lists, strikethrough, task lists, emoji shortcodes, highlight, subscript, superscript, automatic URL linking - the Markdown Guide's extended-syntax list.</li>
+          <li><strong>Platform extras (one app only):</strong> GitHub's alerts, mentions, and color chips; Obsidian's wikilinks; each tool's party tricks live at this layer.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The rule of thumb</strong>
+          Core syntax: type it anywhere with confidence. Extended syntax: works on GitHub (GFM has most of it), test first elsewhere. Platform extras: check that platform's docs, expect them nowhere else.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why CommonMark exists<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The 2004 original shipped as a description plus a script, and reasonable people read the description differently. Does a star inside a word emphasize? How many spaces nest a list? For years, every implementation answered differently - same file, different rendering.</p>
+        <p>CommonMark fixed this by writing an unambiguous spec for the shared core, with a giant test suite anyone can implement against. That's why your Session 1 elements behave identically across serious apps today: most modern implementations, GitHub's included, build on CommonMark and add extras on top. The standard is the peace treaty; the flavors are what each app negotiated extra.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: WHERE EACH FLAVOR LIVES ============ -->
+  <section class="section" id="flavor-homes">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the field guide</span>
+      <h2>Where each flavor lives <span class="tag concept">4 min read</span></h2>
+    </div>
+    <p class="lede">Same syntax, different habitats. Here's what to expect from the apps you'll actually meet.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The habitat table<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>App</th><th>What it speaks</th><th>Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td>GitHub</td><td>GFM - the full extended set you learned in Sessions 2-3</td><td>Some extras are context-bound: color chips render in issues/PRs only, footnotes skip wikis</td></tr>
+            <tr><td>Notion</td><td>Understands markdown as you type (# then space, ** pairs) and on paste/import</td><td>It converts your markdown into its own blocks - what you export back may not match keystroke for keystroke</td></tr>
+            <tr><td>Obsidian</td><td>Close to GFM on files on your disk</td><td>Adds its own extras like wikilinks that won't travel to other apps</td></tr>
+            <tr><td>Slack / Discord</td><td>Markdown-ish shorthand: *, `, &gt; work in spirit</td><td>Not real markdown - no headings in Slack messages, and details differ between the two. Chat formatting, not documents</td></tr>
+          </tbody>
+        </table>
+        <p>The pattern: document tools sit near GFM; chat tools borrow the punctuation without the spec. Your core elements survive almost everywhere; everything else deserves a ten-second test.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The "some processors" shelf<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Three extended elements exist in the official inventories but render only on some processors - the Markdown Guide flags each one. File under "test first":</p>
+        <ul>
+          <li><strong>Definition lists:</strong> a term on one line, <span class="syn-chip">: definition</span> on the next. Markdown Extra territory; GitHub READMEs don't render them.</li>
+          <li><strong>Highlight:</strong> <span class="syn-chip">==marked text==</span> for a highlighter effect - Obsidian yes, GitHub no.</li>
+          <li><strong>Sub/superscript:</strong> <span class="syn-chip">~sub~</span> and <span class="syn-chip">^super^</span> as syntax in some processors; on GitHub use the HTML tags <span class="syn-chip">&lt;sub&gt;</span> and <span class="syn-chip">&lt;sup&gt;</span> from Session 3 instead.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The ten-second test:</strong> before relying on any fancy element in a new app, type a one-line sample and preview it. Ten seconds of testing beats an hour of "why is my published page full of equals signs".</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: EXPORT ============ -->
+  <section class="section" id="export">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers pandoc getting-started basics (verified) + publishing-paths teaser</span>
+      <h2>Export: markdown to anything <span class="tag concept">5 min read</span></h2>
+    </div>
+    <p class="lede">Because a .md file is plain text with a known grammar, converters can turn it into almost any document format. This is markdown's endgame: write once, publish anywhere.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Pandoc: the universal converter<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Pandoc (pandoc.org, free, open source) converts between dozens of document formats. The basic form, straight from its getting-started guide:</p>
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You run (one line, in a terminal)</span><span class="mk">pandoc </span><span class="mkw">page.md</span><span class="mk"> -o </span><span class="mkw">page.docx</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">You get</span>
+            <p>A real Word document: your headings become Word headings, lists become lists, tables become tables. Pandoc infers both formats from the file extensions - swap <span class="syn-chip">.docx</span> for <span class="syn-chip">.html</span> and you get a web page instead.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The -o flag names the output;</strong> the extension picks the format. Add <span class="syn-chip">-s</span> for a standalone file with a proper header when making HTML.</li>
+          <li><strong>PDF needs one extra:</strong> pandoc's guide notes that PDF output requires a LaTeX engine installed (MacTeX, MiKTeX, or texlive). With it: <span class="syn-chip">pandoc page.md -o page.pdf</span>.</li>
+          <li><strong>No terminal, no problem:</strong> plenty of web-based md-to-docx converters do the same one file at a time - fine for the occasional export.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>From README to website: static site generators<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The idea:</strong> a static site generator takes a folder of .md files and builds a full website - navigation, theme, search. You write markdown; it does web design.</li>
+          <li><strong>Closest to home:</strong> GitHub Pages can publish a repo as a website, with Jekyll as its classic engine - meaning the markdown skills from this course are literally one settings page away from being a personal site.</li>
+          <li><strong>Names to recognize:</strong> MkDocs (documentation sites) and Docusaurus (developer docs) - both markdown-in, website-out. When a team's docs site looks suspiciously nice, one of these is usually underneath.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>When to leave markdown<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Honest boundaries: markdown is for structured writing, not layout design.</p>
+        <ul>
+          <li><strong>Heavy layout:</strong> multi-column spreads, precise image placement, pixel-perfect brochures - that's a design tool's job. Markdown has no opinion about where things sit on a page.</li>
+          <li><strong>Print typography:</strong> exact fonts, margins, and page breaks for print belong to Word, InDesign, or LaTeX. Pandoc can hand your content over; the polish happens there.</li>
+          <li><strong>The healthy split:</strong> draft and store the content in markdown (portable, versionable, future-proof), export to the fancy format last. Content in markdown, layout at the end - you keep the source, they get the gloss.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ TRY IT ============ -->
+  <section class="section" id="try-it">
+    <div class="section-kicker">
+      <span class="klabel">Try it</span>
+      <h2>Export your page, watch what survives <span class="tag exercise">◐ 10 min hands-on</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Grab the raw markdown of your profile README (on GitHub: open README.md, the Raw button shows the plain text - copy it all).</p></div>
+      <div class="step"><p>Convert it to a Word document: paste it into any web-based markdown-to-docx converter and download the result, OR if you're comfortable in a terminal, install pandoc and run <span class="syn-chip">pandoc README.md -o README.docx</span>.</p></div>
+      <div class="step"><p>Open the .docx and audit it against the core-vs-extended line: headings, lists, links, and tables should have survived as real Word structures. What happened to your badges, emoji shortcodes, collapsibles, and Mermaid block?</p></div>
+      <div class="step"><p>Write the answer down as one takeaway sentence - you've just measured exactly where your document's portability ends, which is the whole lesson of this page.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Grow the project</strong>
+      The platform-only extras (badges, collapsibles, Mermaid) are what vanished - they're GFM-and-beyond territory. If your README one day needs to travel as a document, you now know which sections would need a plain-markdown rewrite.
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · What's the relationship between CommonMark and GFM?</p>
+      <button class="qopt" type="button">A · They're competing standards for the same elements</button>
+      <button class="qopt" type="button">B · CommonMark is GitHub's private dialect of GFM</button>
+      <button class="qopt" type="button">C · CommonMark is the standardized core; GFM builds on it and adds extras like tables, task lists, and strikethrough</button>
+      <p class="qwhy">CommonMark nails down the shared basics precisely; GitHub Flavored Markdown extends that base with the Session 2-3 features.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Which of these are EXTENDED syntax (app-dependent), not core?</p>
+      <button class="qopt" type="button">A · Tables, task lists, strikethrough, footnotes</button>
+      <button class="qopt" type="button">B · Headings, bold, italic, links</button>
+      <button class="qopt" type="button">C · Paragraphs, blockquotes, ordered lists</button>
+      <p class="qwhy">B and C are the CommonMark core - safe everywhere. The extended set works on GitHub but deserves a test-first anywhere else.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · What does pandoc do?</p>
+      <button class="qopt" type="button">A · Checks your markdown for syntax errors</button>
+      <button class="qopt" type="button">B · Converts documents between formats - e.g. pandoc page.md -o page.docx turns markdown into Word</button>
+      <button class="qopt" type="button">C · Hosts your markdown files as a website</button>
+      <p class="qwhy">Pandoc is the universal document converter: format inferred from extensions, -o names the output, PDF needs a LaTeX engine installed.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This page draws on the flavor and export notes across <a href="https://www.markdownguide.org/">markdownguide.org</a> (getting-started + extended syntax), the framing at <a href="https://commonmark.org/">commonmark.org</a>, and the getting-started guide at <a href="https://pandoc.org/">pandoc.org</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Markdown Guide: flavor + support notes</span><span class="note">getting-started flavors section + extended-syntax availability flags - Parts 1-2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CommonMark: the standardization story</span><span class="note">why the spec exists and what it covers - Part 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Pandoc: getting-started basics</span><span class="note">command form, -o flag, extension inference, LaTeX-for-PDF note - verified against pandoc.org - Part 3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">R Markdown, MultiMarkdown, Markdown Extra</span><span class="note">named for recognition only - each has its own docs if you ever land there</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Static site generators</span><span class="note">Jekyll + GitHub Pages, MkDocs, Docusaurus - teaser only, each a course of its own</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Deep dive 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Flavor rule of thumb</b><span>Core = anywhere · extended = GitHub yes, test elsewhere · platform extras = that platform only.</span></div>
+      <div class="cheat-item"><b>Core set</b><span>Headings, paragraphs, emphasis, blockquotes, lists, inline code, rules, links, images.</span></div>
+      <div class="cheat-item"><b>Extended set</b><span>Tables, fenced code, task lists, strikethrough, footnotes, emoji, highlight, sub/superscript.</span></div>
+      <div class="cheat-item"><b>Pandoc</b><span>pandoc page.md -o page.docx - extension picks the format; PDF needs a LaTeX engine.</span></div>
+      <div class="cheat-item"><b>Website teaser</b><span>GitHub Pages (+ Jekyll) turns a repo of .md into a site; MkDocs/Docusaurus for docs.</span></div>
+      <div class="cheat-item"><b>The healthy split</b><span>Content lives in markdown; heavy layout and print polish happen in the export, last.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Deep dive 2 of 3 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="41-markdown-for-ai.html">← Markdown for AI work</a> &nbsp;·&nbsp; <a href="../index.html">All sessions</a> &nbsp;·&nbsp; <a href="43-mermaid-deeper.html">Mermaid beyond basics →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

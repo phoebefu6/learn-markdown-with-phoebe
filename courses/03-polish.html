@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 3 · Polish: badges, emoji, collapsibles, diagrams - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Session 3 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Session 3 of 4</div>
+    <h1>Polish: <span class="accent">badges, emoji, collapsibles, diagrams</span></h1>
+    <p class="sub">Your page works. Today it starts to look like the READMEs you admire: a badge row up top, tasteful emoji, sections that fold away politely, a mini table of contents, and a diagram you draw by typing plain text. This is the glow-up session - same file, suddenly professional.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Medium</span>
+      <span class="chip audience">Bring your draft</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Glow-up lab</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where your page stands</h2>
+    </div>
+    <p class="lede">After two sessions your about-me page has headings, lists, links, a photo, a quote, a skills table, and a checklist. Solid - but it still looks like homework. Today's session is pure polish: the small touches that make strangers on GitHub think "this person knows what they're doing." Next week it goes live, so this is dress rehearsal.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR page</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A badge row at the top of your page, emoji in the right places (and only the right places), a collapsible "fun facts" section, a Mermaid diagram of your learning journey drawn from pure text, and a mini table of contents. Plus the honest map of which polish tricks work where - so nothing breaks on ship day.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: BADGES + EMOJI ============ -->
+  <section class="section" id="badges-emoji">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers GitHub Docs emoji + the shields.io community convention</span>
+      <h2>Badges and emoji <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">The two fastest polish wins. One is a clever reuse of syntax you already know; the other is typing <span class="syn-chip">:</span> and letting GitHub do the rest.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Badges: Session 2's image syntax, pointed somewhere clever<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">![</span><span class="mkw">Made with</span><span class="mk">](</span>https://img.shields.io/badge/<span class="mkb">Made%20with</span>-<span class="mkb">Markdown</span>-<span class="mkb">blue</span><span class="mk">)</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <p><span style="display:inline-flex;font:600 .72rem Inter,sans-serif;border-radius:4px;overflow:hidden;vertical-align:middle"><span style="background:#555;color:#fff;padding:3px 7px">Made with</span><span style="background:#007ec6;color:#fff;padding:3px 7px">Markdown</span></span> - a crisp two-tone pill, like the pro READMEs</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Anatomy of the URL:</strong> <span class="syn-chip">img.shields.io/badge/LABEL-MESSAGE-COLOR</span> - left text, right text, right-side color, separated by hyphens. Spaces become <span class="syn-chip">%20</span>.</li>
+          <li><strong>Honesty beat:</strong> badges are NOT markdown and NOT a GitHub feature. They're a <strong>community convention</strong> powered by shields.io, a free service that generates badge images on demand. You're just using Session 2's <span class="syn-chip">![alt](url)</span> image syntax - pointed at a machine that draws pills.</li>
+          <li><strong>Which means:</strong> they render anywhere images render - including stackedit. No new rules to learn, and one pattern covers endless badges. The full parameter zoo lives at <a href="https://shields.io">shields.io</a>.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>Open any famous repo - React, VS Code, pandas - and the first thing under the title is a badge row: build passing, version, license, downloads. Those are all shields.io-style images. Your "Made with Markdown" badge uses the exact same mechanism as a badge with 20 million weekly viewers.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Emoji: shortcodes on GitHub, paste anywhere<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span>Learning markdown <span class="mkb">:+1:</span> and shipping soon <span class="mkb">:rocket:</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <p>Learning markdown 👍 and shipping soon 🚀</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Shortcodes:</strong> <span class="syn-chip">:name:</span> between colons - <span class="syn-chip">:+1:</span>, <span class="syn-chip">:rocket:</span>, <span class="syn-chip">:coffee:</span>. On GitHub, typing <span class="syn-chip">:</span> pops up an autocomplete list - browse it, you'll find everything.</li>
+          <li><strong>The universal alternative:</strong> copy-paste the emoji character itself (🚀) straight into your text. It's just a character - works in ANY markdown app, no rendering required.</li>
+          <li><strong>Dose carefully:</strong> emoji are seasoning, not soup. A few as section markers or personality accents reads friendly; one per word reads like a ransom note.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where shortcodes fail + highlight + sub/superscript<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Shortcodes vary by app:</strong> <span class="syn-chip">:joy:</span> renders on GitHub and Slack but may sit there as literal text elsewhere - each app keeps its own shortcode list. When in doubt, paste the real emoji character instead.</li>
+          <li><strong>Highlight:</strong> <span class="syn-chip">==important==</span> marks text with a highlighter effect - but only in SOME processors (not GitHub). Check before relying on it.</li>
+          <li><strong>Sub and superscript:</strong> markdown has no native syntax, so borrow HTML - <span class="syn-chip">H&lt;sub&gt;2&lt;/sub&gt;O</span> and <span class="syn-chip">x&lt;sup&gt;2&lt;/sup&gt;</span> both work on GitHub, as does underline via <span class="syn-chip">&lt;ins&gt;</span>.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: COLLAPSIBLES + NAVIGATION ============ -->
+  <section class="section" id="collapsibles-navigation">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers GitHub Docs collapsed sections + section links</span>
+      <h2>Collapsibles and navigation <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Long page? Fold the optional bits away and give readers a table of contents. Both tricks take one minute to learn.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Collapsible sections: &lt;details&gt; and &lt;summary&gt;<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">&lt;details&gt;</span>
+<span class="mk">&lt;summary&gt;</span><span class="mkw">Fun facts about me</span><span class="mk">&lt;/summary&gt;</span>
+
+<span class="mk">- </span>I have climbed a volcano
+<span class="mk">- </span>I alphabetize my spices
+
+<span class="mk">&lt;/details&gt;</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <div style="font-weight:700;font-size:.9rem">▶ Fun facts about me</div>
+            <p style="font-size:.8rem;color:var(--muted,#5C6B84);margin-top:.3rem">collapsed - the list appears only when clicked</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>How it works:</strong> two HTML tags GitHub happily renders inside markdown. <span class="syn-chip">&lt;summary&gt;</span> is the always-visible clickable line; everything else inside <span class="syn-chip">&lt;details&gt;</span> hides until clicked.</li>
+          <li><strong>The blank-line rule:</strong> leave a blank line after <span class="syn-chip">&lt;/summary&gt;</span> or the markdown inside may not render as markdown.</li>
+          <li><strong>Meta moment:</strong> every accordion card on THIS course page - including the one you just clicked to read this - is a <span class="syn-chip">&lt;details&gt;</span>/<span class="syn-chip">&lt;summary&gt;</span> pair. You've been using the feature all course.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Section links and the mini table of contents<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">## </span><span class="mkw">Contents</span>
+<span class="mk">- </span><span class="mk">[</span><span class="mkw">About me</span><span class="mk">](</span>#about-me<span class="mk">)</span>
+<span class="mk">- </span><span class="mk">[</span><span class="mkw">My skills</span><span class="mk">](</span>#my-skills<span class="mk">)</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <div style="font-weight:800;font-size:1rem">Contents</div>
+            <ul style="margin:.3rem 0 0 1.2rem"><li><a href="#" onclick="return false" style="color:var(--indigo)">About me</a></li><li><a href="#" onclick="return false" style="color:var(--indigo)">My skills</a></li></ul>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Same link syntax, new address:</strong> instead of a URL, point at <span class="syn-chip">#heading-name</span>. GitHub gives every heading an automatic anchor: lowercase the text, replace spaces with hyphens - <span class="syn-chip">## My skills</span> becomes <span class="syn-chip">#my-skills</span>.</li>
+          <li><strong>Cheat, don't guess:</strong> on GitHub, hover a rendered heading and click the link icon that appears - your address bar now shows the exact anchor. Copy it.</li>
+          <li><strong>Mini TOC:</strong> a <span class="syn-chip">## Contents</span> heading plus a bulleted list of section links. Three lines of markdown, instant navigation - the polish move readers actually use.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>GitHub's own bug-report templates hide environment logs inside <span class="syn-chip">&lt;details&gt;</span> blocks so maintainers see the summary first, and long project READMEs open with a linked table of contents. The moment your page scrolls more than two screens, these two features stop being decoration and become navigation.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Footnotes, custom anchors, and invisible comments<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Footnotes:</strong> mark the spot with <span class="syn-chip">[^1]</span>, then define it anywhere as <span class="syn-chip">[^1]: the note text</span> - GitHub renders numbered links and collects the notes at the bottom.</li>
+          <li><strong>Where footnotes fail:</strong> they don't work in GitHub wikis, and the marker won't render inside lists, blockquotes, or tables. READMEs and issues: fine.</li>
+          <li><strong>Custom anchors:</strong> need a link target that isn't a heading? Drop <span class="syn-chip">&lt;a name="my-spot"&gt;&lt;/a&gt;</span> in the text and link to <span class="syn-chip">#my-spot</span>.</li>
+          <li><strong>Hidden comments:</strong> <span class="syn-chip">&lt;!-- note to self --&gt;</span> stays in your file but never renders - handy for reminders like "update this section monthly."</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: MERMAID ============ -->
+  <section class="section" id="mermaid">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers GitHub Docs diagrams + mermaid.js.org intro</span>
+      <h2>Diagrams from text - Mermaid <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">The wow moment of the course: type a few lines of text, get a real flowchart. No drawing tool, no dragging boxes - and the diagram lives in your file like everything else.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The mermaid fence: a code block that draws<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">```</span><span class="mkb">mermaid</span>
+<span class="mkw">graph TD;</span>
+<span class="mkw">    A--&gt;B;</span>
+<span class="mkw">    A--&gt;C;</span>
+<span class="mkw">    B--&gt;D;</span>
+<span class="mkw">    C--&gt;D;</span>
+<span class="mk">```</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:2px;font:600 .72rem Inter,sans-serif">
+              <span style="border:1.5px solid var(--indigo);border-radius:4px;padding:2px 10px">A</span>
+              <span style="color:var(--muted,#5C6B84)">↙ ↘</span>
+              <span><span style="border:1.5px solid var(--indigo);border-radius:4px;padding:2px 10px">B</span>&nbsp;&nbsp;<span style="border:1.5px solid var(--indigo);border-radius:4px;padding:2px 10px">C</span></span>
+              <span style="color:var(--muted,#5C6B84)">↘ ↙</span>
+              <span style="border:1.5px solid var(--indigo);border-radius:4px;padding:2px 10px">D</span>
+            </div>
+            <p style="font-size:.78rem;color:var(--muted,#5C6B84);margin-top:.4rem">a rendered flowchart - real boxes, real arrows</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>It's Session 2's code fence</strong> with <span class="syn-chip">mermaid</span> as the language id. GitHub sees that word and, instead of showing code, hands the text to the Mermaid engine and displays the drawing. This exact example is straight from GitHub's own docs.</li>
+          <li><strong>Reading the lines:</strong> <span class="syn-chip">graph TD;</span> declares a flowchart, then each <span class="syn-chip">A--&gt;B;</span> line means "draw an arrow from node A to node B." Name the nodes, state the arrows, done.</li>
+          <li><strong>StackEdit reality check:</strong> Mermaid may not render in your split-pane editor - it's a GitHub (and mermaid-aware apps) feature. Trust the syntax; github.com's preview tab is the ground truth.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Node shapes and flow direction<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Label a node</strong> by putting text in brackets after its id - the bracket style picks the shape: <span class="syn-chip">A[step]</span> draws a rectangle, <span class="syn-chip">A(step)</span> a rounded box, <span class="syn-chip">A{choice?}</span> a decision diamond.</li>
+          <li><strong>Direction:</strong> <span class="syn-chip">graph TD</span> flows top-down; <span class="syn-chip">graph LR</span> flows left to right - usually the better fit for timeline-ish stories like your learning journey.</li>
+          <li><strong>That's genuinely enough</strong> to diagram most ideas. Sequence diagrams, pie charts, and gantt charts exist too - the deep-dive track (DD3) and <a href="https://mermaid.js.org">mermaid.js.org</a> have the full tour.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What GitHub renders + version check + plugin warning<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Four diagram fences render on GitHub:</strong> <span class="syn-chip">mermaid</span>, <span class="syn-chip">geojson</span>, <span class="syn-chip">topojson</span> (maps), and <span class="syn-chip">stl</span> (3D models). We teach mermaid; the others exist if you ever need a map or a 3D part.</li>
+          <li><strong>Which Mermaid version is GitHub running?</strong> Put the single word <span class="syn-chip">info</span> inside a mermaid fence - the rendered block reports the version.</li>
+          <li><strong>Plugin warning:</strong> GitHub's docs caution that third-party Mermaid browser extensions can conflict with the built-in rendering. If a diagram misbehaves, try a browser profile without extensions before blaming your syntax.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4: THE TRAPS ============ -->
+  <section class="section" id="traps">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the honest map</span>
+      <h2>The traps: what works where <span class="tag concept">2 min live</span></h2>
+    </div>
+    <p class="lede">Polish features are the least portable markdown you'll write. Two minutes now saves a confused ship day.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The color-chip trap + alerts, in moderation<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>The color-chip trap:</strong> writing a hex code in backticks like <span class="syn-chip">`#0969DA`</span> renders a cute color swatch next to it - but ONLY in issues, pull requests, and discussions. In a README it's just monospace text. Don't design your profile page around a feature that won't be there.</li>
+          <li><strong>Alerts:</strong> <span class="syn-chip">&gt; [!NOTE]</span> on its own line turns the blockquote under it into a styled callout box. Five types: NOTE, TIP, IMPORTANT, WARNING, CAUTION. These DO work in READMEs - but they're GitHub-flavored, so other apps show a plain quote.</li>
+          <li><strong>Dosage:</strong> GitHub's own guidance - use alerts sparingly, one or two per document, and don't nest them. An alert that's everywhere alerts no one.</li>
+        </ul>
+      </div>
+    </details>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision lanes: which polish feature works where - everywhere, on GitHub, or only in issues and pull requests">
+        <style>
+          .s3pH { font: 700 14px Inter, sans-serif; fill: #16233B; }
+          .s3pC { font: 600 12.5px Inter, sans-serif; fill: #FFFFFF; }
+          .s3pX { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+        </style>
+        <text class="s3pH" x="30" y="40">Lane 1 · Works everywhere markdown renders</text>
+        <rect x="30" y="52" width="150" height="30" rx="15" fill="#052C70"/><text class="s3pC" x="52" y="71">pasted emoji 🙂</text>
+        <rect x="190" y="52" width="120" height="30" rx="15" fill="#052C70"/><text class="s3pC" x="215" y="71">headings</text>
+        <rect x="320" y="52" width="150" height="30" rx="15" fill="#052C70"/><text class="s3pC" x="345" y="71">lists + links</text>
+        <rect x="480" y="52" width="200" height="30" rx="15" fill="#052C70"/><text class="s3pC" x="502" y="71">badges (just images)</text>
+        <text class="s3pH" x="30" y="130">Lane 2 · GitHub territory: READMEs, issues, PRs</text>
+        <rect x="30" y="142" width="130" height="30" rx="15" fill="#083FA1"/><text class="s3pC" x="52" y="161">:shortcodes:</text>
+        <rect x="170" y="142" width="130" height="30" rx="15" fill="#083FA1"/><text class="s3pC" x="192" y="161">&lt;details&gt;</text>
+        <rect x="310" y="142" width="140" height="30" rx="15" fill="#083FA1"/><text class="s3pC" x="332" y="161">section links</text>
+        <rect x="460" y="142" width="120" height="30" rx="15" fill="#2E63C4"/><text class="s3pC" x="486" y="161">mermaid</text>
+        <rect x="590" y="142" width="130" height="30" rx="15" fill="#2E63C4"/><text class="s3pC" x="615" y="161">&gt; [!NOTE]</text>
+        <text class="s3pH" x="30" y="220">Lane 3 · Issues / PRs / discussions ONLY - never READMEs</text>
+        <rect x="30" y="232" width="200" height="30" rx="15" fill="#D97706"/><text class="s3pC" x="52" y="251">color chips `#0969DA`</text>
+        <text class="s3pX" x="245" y="251">the trap: looks great in a PR comment, plain text on your profile page</text>
+        <text class="s3pX" x="30" y="290">Rule of thumb: your profile README lives in lanes 1 and 2. Anything from lane 3, leave for issue conversations.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - decision lanes: which polish feature survives where</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Build your badge row <span class="tag demo">★ 7 min · everyone types</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open your about-me draft (stackedit tab or github.com editor). Go to the very top, directly under your <span class="syn-chip"># Name</span> heading, and add a blank line for the badge row.</p></div>
+      <div class="step"><p>Type your first badge: <span class="syn-chip">![Made with](https://img.shields.io/badge/Made%20with-Markdown-blue)</span>. Badges are images, so stackedit renders them live - watch the pill appear.</p></div>
+      <div class="step"><p>Add two more on the same line, one space apart. Make them YOU - playful beats corporate: <span class="syn-chip">Currently%20learning-markdown-orange</span>, <span class="syn-chip">Coffee%20level-critical-red</span>, whatever's true.</p></div>
+      <div class="step"><p>Read the pattern back out loud: LABEL, hyphen, MESSAGE, hyphen, COLOR, spaces as %20. That's the whole grammar - you can now mint badges forever.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Hyphen inside your text?</strong>
+      Hyphens separate the badge parts, so a hyphen INSIDE a label needs doubling: <span class="syn-chip">data--driven</span> renders as "data-driven". If a badge looks chopped in half, that's why.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Fold, sprinkle, navigate <span class="tag demo">★ 8 min · everyone builds</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Add a collapsible: type <span class="syn-chip">&lt;details&gt;</span>, then <span class="syn-chip">&lt;summary&gt;More about me&lt;/summary&gt;</span>, a BLANK line, two or three fun facts as a list, then <span class="syn-chip">&lt;/details&gt;</span>. The blank line after the summary is the step people miss.</p></div>
+      <div class="step"><p>Emoji sprinkle: add 3 to 5 emoji where they earn their place - one next to a section heading, one in your intro line, one in the fun facts. Shortcodes like <span class="syn-chip">:rocket:</span> are GitHub's dialect; if your editor shows literal text, paste the real emoji character or trust the syntax.</p></div>
+      <div class="step"><p>Now the mini TOC: under your badge row, add <span class="syn-chip">## Contents</span> and a bulleted list of three section links - <span class="syn-chip">[About me](#about-me)</span> style. Lowercase, spaces to hyphens.</p></div>
+      <div class="step"><p>Taste check: collapse your eyes half-shut and look at the page. 3-5 emoji reads warm; 50 reads chaotic. Cut until it feels like you on a good day.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>Draw your journey in Mermaid <span class="tag demo">★ 7 min · everyone types</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Near the bottom of your page, add a <span class="syn-chip">## My journey</span> heading, then open a fence: three backticks plus <span class="syn-chip">mermaid</span> on the same line.</p></div>
+      <div class="step"><p>First line inside: <span class="syn-chip">graph LR;</span> - your story flows left to right.</p></div>
+      <div class="step"><p>Tell it in 4 or 5 nodes: <span class="syn-chip">A[Curious about markdown]--&gt;B[This course];</span> then <span class="syn-chip">B--&gt;C[Markdown fluent];</span>. Add one branch - maybe <span class="syn-chip">B--&gt;D{Ship my page?};</span> and <span class="syn-chip">D--&gt;C;</span>. Close with three backticks.</p></div>
+      <div class="step"><p>Preview: got a GitHub account? Paste your page into a new file on github.com and click the Preview tab - the diagram renders there, ground truth. No account yet? Trust the syntax today; next week's session starts by making the account and you'll see it render live.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Semicolons and spelling</strong>
+      Mermaid is stricter than markdown: a misspelled <span class="syn-chip">grap LR</span> or a stray character can blank the whole diagram. If it breaks, read your first line first - that's the bug 90% of the time.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Finish the polish items</strong> you didn't get to in the lab: badge row, collapsible, mini TOC, journey diagram. Your page should feel done, not draft.</li>
+      <li><strong>Pick your final structure</strong> for ship day: which sections stay, what order, what folds into a collapsible. Ship day is assembly, not authorship.</li>
+      <li><strong>Create a free GitHub account if you don't have one</strong> - <a href="https://github.com/signup">github.com/signup</a>, two minutes. This one is REQUIRED: Session 4 is publish day and there is no publishing without it.</li>
+      <li><strong>Optional playground:</strong> <a href="https://mermaid.live">mermaid.live</a> renders Mermaid as you type - the stackedit of diagrams. Ten minutes there and flowcharts become a reflex.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · What IS a badge, really?</p>
+      <button class="qopt" type="button">A · Special badge syntax that GitHub added to markdown</button>
+      <button class="qopt" type="button">B · Ordinary image syntax pointed at shields.io, a community service that draws the pill</button>
+      <button class="qopt" type="button">C · An emoji shortcode with parameters</button>
+      <p class="qwhy">No new markdown involved - it's Session 2's ![alt](url) aimed at a badge-generating service. A community convention, not a markdown or GitHub feature.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · You put `#0969DA` in your README expecting a color swatch. What renders?</p>
+      <button class="qopt" type="button">A · A blue color chip next to the code</button>
+      <button class="qopt" type="button">B · Nothing - the line disappears</button>
+      <button class="qopt" type="button">C · Just monospace text - swatches only render in issues, PRs, and discussions</button>
+      <p class="qwhy">The color-chip trap: the swatch is an issues/PRs/discussions feature. READMEs show plain inline code. Lane 3 on the decision map.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · How do you tell GitHub "this block is a diagram, not code"?</p>
+      <button class="qopt" type="button">A · A normal fenced code block with mermaid as the language id</button>
+      <button class="qopt" type="button">B · A special &lt;diagram&gt; HTML tag</button>
+      <button class="qopt" type="button">C · Indent the diagram text four spaces</button>
+      <p class="qwhy">Same fence you learned in Session 2 - the language word mermaid tells GitHub to render a drawing instead of highlighting code.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the polish layer from <a href="https://docs.github.com/en/get-started/writing-on-github">GitHub Docs writing syntax</a>, GitHub Docs on creating diagrams, and the <a href="https://mermaid.js.org">mermaid.js.org</a> introduction - plus one honest community convention.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Docs: emoji, collapsed sections, section links</span><span class="note">shortcodes + autocomplete, details/summary, #anchors + mini TOC - Parts 1-2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Docs: creating diagrams (Mermaid)</span><span class="note">mermaid fence, the docs' own graph TD example, version check - Part 3</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">mermaid.js.org: intro + flowchart basics</span><span class="note">node shapes, TD/LR directions, labels - Part 3 + Demo 3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Markdown Guide extended: footnotes, highlight, sub/superscript</span><span class="note">self-study cards in Parts 1-2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">GitHub Docs: alerts</span><span class="note">5 types + 1-2 per doc guidance - Part 4 live intro, details self-study</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">shields.io parameter reference</span><span class="note">honest note: ONE pattern taught here; the full zoo is linked out</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Badge</b><span>![label](https://img.shields.io/badge/LABEL-MESSAGE-COLOR) - spaces as %20. Just an image.</span></div>
+      <div class="cheat-item"><b>Emoji</b><span>:shortcode: on GitHub (type : for autocomplete) - or paste the emoji character anywhere.</span></div>
+      <div class="cheat-item"><b>Collapsible</b><span>&lt;details&gt;&lt;summary&gt;Title&lt;/summary&gt; + blank line + content + &lt;/details&gt;.</span></div>
+      <div class="cheat-item"><b>Section link</b><span>[text](#heading-name) - lowercase the heading, spaces become hyphens.</span></div>
+      <div class="cheat-item"><b>Mermaid</b><span>```mermaid fence · graph TD or LR · A[box]--&gt;B{diamond}; - renders on GitHub.</span></div>
+      <div class="cheat-item"><b>Alerts</b><span>&gt; [!NOTE] / TIP / IMPORTANT / WARNING / CAUTION - READMEs yes, 1-2 per doc, no nesting.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 4 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="02-structure.html">← Session 2: Structure</a> &nbsp;·&nbsp; <a href="04-ship-it.html">Session 4: Ship it →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

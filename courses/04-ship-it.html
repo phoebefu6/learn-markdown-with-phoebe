@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 4 · Ship it: your page, live on GitHub - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Session 4 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Session 4 of 4</div>
+    <h1>Ship it: <span class="accent">your page, live on GitHub</span></h1>
+    <p class="sub">Three sessions of drafting and polishing come down to today: the about-me page in your editor becomes your public GitHub profile, visible to anyone on Earth who looks you up. One repo, one paste, one commit. Bring your finished draft and something to celebrate with.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Hands-on</span>
+      <span class="chip audience">GitHub account (free)</span>
+      <span class="chip audience">Bring your finished draft</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-15 · Concepts</span>
+      <span class="a3" style="flex:8">15-40 · Publish lab</span>
+      <span class="a4" style="flex:2">40-45 · Show + tell</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>The moment</h2>
+    </div>
+    <p class="lede">Everything so far happened in a browser tab only you could see. Today that changes. Your page - headings, photo, table, badges, Mermaid diagram, all of it - goes live at a real public URL. This is the shortest concept block of the course on purpose: today is for shipping, not studying.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR page, LIVE</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      Your markdown page live at github.com/yourusername - the first thing anyone sees when they look you up on GitHub. Plus the skills that got it there: creating a repo, editing in the GitHub web editor, previewing, and committing. From here on, every edit you make is published in seconds.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: GITHUB IN 5 MINUTES ============ -->
+  <section class="section" id="github-basics">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers GitHub web-editor basics</span>
+      <h2>GitHub in 5 minutes, no trauma <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">You do not need to be a programmer to use GitHub, and today you will not touch a terminal or type a single git command. Two ideas and three buttons are the whole toolkit.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What GitHub is, for a non-coder<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Strip away the developer mystique and GitHub is a place that <strong>stores text files and renders markdown beautifully</strong>. That's genuinely all you need it to be today. Two words of vocabulary:</p>
+        <ul>
+          <li><strong>Repo</strong> (repository): a folder with a name. Yours will hold exactly one file.</li>
+          <li><strong>Commit</strong>: a save, with a short note attached saying what changed. That's it - "commit" is developer for "save with a memo".</li>
+        </ul>
+        <p>Your markdown file needs zero changes to work there. GitHub speaks GFM - the exact flavor you've been writing since Session 2.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The web editor: three buttons, no terminal<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Everything today happens on github.com in your browser:</p>
+        <ul>
+          <li><strong>The pencil</strong> ✏️ on any file opens it for editing, right on the page.</li>
+          <li><strong>The Preview tab</strong> shows the rendered result before you save - GitHub's version of your split-pane right side, one click away.</li>
+          <li><strong>The Commit button</strong> saves, with your note. The moment you commit, the change is live.</li>
+        </ul>
+        <p>Edit, preview, commit. That loop is the entire workflow, and you'll run it three times before this session ends.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What version history buys you<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every commit is kept, forever. Click <strong>History</strong> on any file and you can see every version you ever saved, who saved it, and when. Nothing is ever overwritten - which means <strong>fearless editing</strong>: you cannot destroy your page, only add versions of it. Made a mess? Open History, view the last good version, copy it back, commit again.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>This is why the world's documentation lives on GitHub: the entire Python docs, Microsoft's docs, most open-source READMEs. Thousands of strangers edit the same markdown files, and version history means no edit is ever a risk. The safety net you get on your one-file profile repo is the same one protecting projects with a million users.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: THE MAGIC REPO ============ -->
+  <section class="section" id="magic-repo">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers GitHub Docs: managing your profile README</span>
+      <h2>The magic repo <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">GitHub has one special trick: create a repo named <strong>exactly your username</strong>, and its README takes over the top of your public profile page. GitHub's docs call it a "special repository" - we call it the magic repo. Four conditions, all required.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The username/username trick: ALL FOUR requirements<span class="mini">2 min · recite these</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Straight from GitHub's docs - your profile README shows only when <strong>all four</strong> hold:</p>
+        <ul>
+          <li><strong>1 · Name match:</strong> the repository's name matches your GitHub username <strong>exactly</strong>. Username <span class="syn-chip">octocat</span> needs repo <span class="syn-chip">octocat/octocat</span>.</li>
+          <li><strong>2 · Public:</strong> the repository is public.</li>
+          <li><strong>3 · Right file, right place:</strong> a file named <span class="syn-chip">README.md</span> sits in the root of the repository.</li>
+          <li><strong>4 · Not empty:</strong> the README.md contains any content at all.</li>
+        </ul>
+        <p>Miss any one and the profile simply shows nothing - no error, no hint. Memorize the four and you can debug any invisible profile in a minute.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The creation flow, in one breath<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>New repository → name it your username → Public → check "Add a README file" → Create.</strong></p>
+        <p>Two nice surprises when the name matches: GitHub shows a banner telling you that you've found the special repository, and the "Add a README file" checkbox pre-populates the README with a starter template. You'll see both live in Demo 1 - and then replace the template with three sessions of your own work.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>How a profile README can vanish<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The four requirements also read as a troubleshooting list. GitHub hides or removes your profile README when:</p>
+        <ul>
+          <li><strong>The file is empty</strong> - content deleted, even accidentally, and the section disappears.</li>
+          <li><strong>The repo goes private</strong> - flip the visibility and the profile goes blank until you flip it back.</li>
+          <li><strong>The names stop matching</strong> - rename your account or the repo without renaming the other, and the magic breaks silently.</li>
+        </ul>
+        <p><strong>Legacy quirk:</strong> if a matching repo was created before July 2020 (before this feature launched), it won't show automatically - there's a manual "Share to profile" step in the repo settings. You won't hit this with a fresh repo; you might when helping a colleague with an old account.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: WHERE MARKDOWN TAKES YOU ============ -->
+  <section class="section" id="markdown-next">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers Markdown Guide getting-started: flavors + tools</span>
+      <h2>Where markdown takes you next <span class="tag concept">3 min live</span></h2>
+    </div>
+    <p class="lede">Today closes the course, not your markdown career. A quick honest map of the territory: what transfers everywhere, and where you'll use it next week without noticing.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The flavors reality: what you learned travels<span class="mini">1.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every app implements markdown slightly differently - the variants are called <strong>flavors</strong>. The honest picture:</p>
+        <ul>
+          <li><strong>CommonMark core</strong> (Session 1's elements) works everywhere, full stop.</li>
+          <li><strong>GFM</strong> (tables, checklists, emoji, Mermaid - Sessions 2-3) works on GitHub and most modern tools.</li>
+          <li><strong>Every app has quirks</strong> at the edges - when something fancy fails, suspect the flavor before you suspect yourself.</li>
+        </ul>
+        <p>Rule of thumb: what you learned in this course maps roughly 95% everywhere. The remaining 5% is a quick check of the app's docs, and the deep-dive flavor map (DD2) if you want the whole landscape.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Your new superpowers map<span class="mini">1.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Notes:</strong> Obsidian and Notion are markdown underneath - your notes just became portable and future-proof.</li>
+          <li><strong>Docs at work:</strong> team wikis, project READMEs, internal docs - most of it is markdown, and you now write it natively.</li>
+          <li><strong>AI chats:</strong> your prompts and the AI's answers ARE markdown. Structure a prompt with headings and lists and the model follows your structure; read an answer's raw markdown and you see exactly how it organized its thinking. The deep dive on this is <a href="41-markdown-for-ai.html">DD1: Markdown for AI work</a>.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>A project manager from an earlier cohort started writing status updates as markdown checklists in the team Slack. Same content as before - but scannable. Within a month the whole team had copied the format, and her "how do you make those" answer was this course. Markdown spreads because reading it sells it.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Editors, publishing paths, and GitHub's social syntax<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Editors tour:</strong> <a href="https://stackedit.io/app">StackEdit</a> and <a href="https://dillinger.io">Dillinger</a> you know (browser, free). Next steps: <strong>iA Writer</strong> for beautiful focused writing, <strong>VS Code</strong> with its built-in markdown preview if you drift toward code.</li>
+          <li><strong>Publishing paths (teaser):</strong> markdown files can become entire websites - <strong>GitHub Pages</strong> hosts them free, <strong>Jekyll</strong> and <strong>MkDocs</strong> turn folders of .md into blogs and documentation sites. That's the DD2 rabbit hole.</li>
+          <li><strong>GitHub's social syntax:</strong> in issues and discussions, <span class="syn-chip">@username</span> notifies a person and <span class="syn-chip">#123</span> auto-links to issue number 123. Not needed for your profile page - very needed the first time you collaborate.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4: THE SHIPPING PIPELINE ============ -->
+  <section class="section" id="pipeline">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the lab, previewed</span>
+      <h2>The shipping pipeline <span class="tag concept">1 min live</span></h2>
+    </div>
+    <p class="lede">Four stops between your draft and the internet. This is the whole lab - look how short the distance is.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The shipping pipeline: your draft in StackEdit, create the username repo, paste and commit, and your profile page is live">
+        <style>
+          .s4sT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .s4sS { font: 400 11.5px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .s4sX { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+          .s4sA { stroke: #C3CDE0; stroke-width: 2; fill: none; marker-end: url(#s4sAh); }
+        </style>
+        <defs>
+          <marker id="s4sAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C3CDE0" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="30" y="50" width="180" height="60" rx="10" fill="#052C70"/>
+        <text class="s4sT" x="50" y="76">1 · Your draft</text>
+        <text class="s4sS" x="50" y="96">open in StackEdit</text>
+        <rect x="245" y="50" width="180" height="60" rx="10" fill="#083FA1"/>
+        <text class="s4sT" x="265" y="76">2 · New repo</text>
+        <text class="s4sS" x="265" y="96">username/username</text>
+        <rect x="460" y="50" width="180" height="60" rx="10" fill="#2E63C4"/>
+        <text class="s4sT" x="480" y="76">3 · Paste + commit</text>
+        <text class="s4sS" x="480" y="96">preview first, then save</text>
+        <rect x="675" y="50" width="180" height="60" rx="10" fill="#D97706"/>
+        <text class="s4sT" x="695" y="76">4 · LIVE 🎉</text>
+        <text class="s4sS" x="695" y="96">your public profile page</text>
+        <line class="s4sA" x1="212" y1="80" x2="240" y2="80"/>
+        <line class="s4sA" x1="427" y1="80" x2="455" y2="80"/>
+        <line class="s4sA" x1="642" y1="80" x2="670" y2="80"/>
+        <text class="s4sX" x="30" y="145">Demo 1 covers stop 2, Demo 2 covers stops 3-4, Demo 3 is the victory lap around stop 4.</text>
+        <text class="s4sX" x="30" y="167">Total distance from draft to live: about two minutes once you know the way. Everything else today is savoring it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the shipping pipeline: draft, repo, commit, live</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Create the magic repo <span class="tag demo">★ 8 min · everyone creates</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Sign in at <a href="https://github.com">github.com</a> and note your exact username - it's in the top-right avatar menu and in your profile URL. You're about to type it as a repo name, and requirement 1 says <strong>exactly</strong>.</p></div>
+      <div class="step"><p>Click the <strong>+</strong> in the top bar → <strong>New repository</strong>. In "Repository name", type your username. Watch for the banner: GitHub tells you that you've found the special repository. That's the confirmation the magic is on.</p></div>
+      <div class="step"><p>Make sure <strong>Public</strong> is selected (requirement 2) and check <strong>"Add a README file"</strong> (requirements 3 and 4 in one checkbox - the file exists, in the root, with starter content).</p></div>
+      <div class="step"><p>Click <strong>Create repository</strong>. You land in your new repo with a pre-populated README already rendering. Now open your profile page in a new tab - github.com/yourusername - and there it is, the template, live on your profile. All four requirements: met.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Nothing showed up?</strong>
+      Run the four-requirement checklist in order: name matches exactly? public? README.md in the root? file has content? One of those four is your answer - every time.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>The ship <span class="tag demo">★ 12 min · this is the moment</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>In your new repo, click <strong>README.md</strong>, then the <strong>pencil</strong> ✏️ to edit. Select all the template content and <strong>delete it</strong> - it did its job; your page is better.</p></div>
+      <div class="step"><p>Switch to your StackEdit tab, select your whole about-me page, copy. Back in GitHub: <strong>paste</strong>. Three sessions of work, one paste.</p></div>
+      <div class="step"><p>Click the <strong>Preview</strong> tab. This is the Session 3 trust-the-syntax payoff: the badges and the Mermaid diagram that stayed raw in StackEdit <strong>render right here</strong>. Scroll the whole page. Check the photo, the table, the collapsible section.</p></div>
+      <div class="step"><p>Anything off? Flip back to the editing tab, fix it, preview again. This edit-preview loop is exactly your split-pane editor with one extra click.</p></div>
+      <div class="step"><p>Happy? Click <strong>Commit changes</strong>, write the message <span class="syn-chip">my page, v1</span>, and commit. Now open your profile tab and <strong>refresh</strong>. IT'S LIVE.</p></div>
+      <div class="step"><p>📱 <strong>Phone-out moment:</strong> take out your phone, open github.com/yourusername in the browser, and show your neighbor. That page renders on every device on Earth right now, and you wrote it in plain text.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Why preview before committing?</strong>
+      Commits are safe (History keeps everything), but your profile is public the second you commit - the Preview tab lets you catch the broken image or fence typo while it's still private. Preview, then commit: make it a reflex.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>The victory lap <span class="tag demo">★ 5 min · feel how cheap edits are</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>One more edit, right now: pencil, add a line at the bottom of your page - <span class="syn-chip">*built in learn-markdown-with-phoebe*</span> or today's date - and commit with the message <span class="syn-chip">v1.1</span>. Refresh your profile. Total time: under a minute. <strong>That's how cheap edits are now.</strong> Your page is never finished, only current.</p></div>
+      <div class="step"><p>Browse time: open the profiles of two classmates (swap usernames with your neighbors). See what they did differently - a badge you didn't think of, a better table, a funnier bio.</p></div>
+      <div class="step"><p>Leave <strong>verbal compliments</strong> - one thing you genuinely liked on each page, said out loud. You've all just shipped something public. That deserves noise.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week and beyond <span class="tag exercise">◐ ongoing</span></h2>
+    </div>
+    <ul>
+      <li><strong>Share your link somewhere real:</strong> a LinkedIn post, your team chat, your email signature. "I built my GitHub profile page from scratch this month" is a legitimately good post - and the page backs it up.</li>
+      <li><strong>Start a 30-day tweak streak:</strong> one tiny commit a week - reword a line, add a badge, update the checklist. Four commits from now, editing your public page will feel as casual as editing a note.</li>
+      <li><strong>Explore the deep-dive track</strong> when curiosity strikes: <a href="41-markdown-for-ai.html">DD1 · Markdown for AI work</a>, <a href="42-flavors-and-export.html">DD2 · Flavors and export</a>, <a href="43-mermaid-deeper.html">DD3 · Mermaid beyond basics</a>.</li>
+      <li><strong>Steal like a profile artist:</strong> search GitHub for "awesome profile readme" collections, star one repo of examples, and borrow one idea for your next tweak.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you celebrate 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">1 · Your repo is named exactly your username, it's public, and README.md sits in the root - but your profile shows nothing. Which requirement did you miss?</p>
+      <button class="qopt" type="button">A · The README must contain some content - an empty file shows nothing</button>
+      <button class="qopt" type="button">B · The repo needs at least one star before it displays</button>
+      <button class="qopt" type="button">C · You must enable the profile README in account settings</button>
+      <p class="qwhy">Four requirements, all required: exact name match, public, README.md in the root, and any content in it. No stars, no settings toggle - if three hold and nothing shows, the file is empty.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">2 · You set the username/username repo to private "just while I polish it". What happens to your profile?</p>
+      <button class="qopt" type="button">A · Nothing - profile READMEs ignore visibility</button>
+      <button class="qopt" type="button">B · The README disappears from your profile until the repo is public again</button>
+      <button class="qopt" type="button">C · Visitors see a "this content is private" notice</button>
+      <p class="qwhy">Public is requirement 2, and it's binary: private repo, blank profile - silently, with no notice shown. Polish in the Preview tab instead; it's private until you commit.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · You've pasted your page into the GitHub editor. Where do you verify the rendering - Mermaid, badges, all of it - BEFORE it goes public?</p>
+      <button class="qopt" type="button">A · Commit first, then check the profile and fix from there</button>
+      <button class="qopt" type="button">B · You can't - GitHub only renders after committing</button>
+      <button class="qopt" type="button">C · The Preview tab, right next to the editing tab</button>
+      <p class="qwhy">The Preview tab renders full GFM - Mermaid and badges included - while your changes are still private. Preview, fix, then commit: the pro loop.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of GitHub's official docs on <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme">managing your profile README</a> plus the tools-and-flavors half of <a href="https://www.markdownguide.org/getting-started/">Markdown Guide's getting started</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Docs: managing your profile README</span><span class="note">all 4 requirements, creation flow, hiding rules - Part 2 + Demos 1-2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub web-editor basics</span><span class="note">pencil edit, Preview tab, commit with message - Part 1 + Demo 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Markdown Guide: getting started (flavors + tools)</span><span class="note">CommonMark vs GFM reality, where markdown lives next - Part 3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">GitHub Pages / Jekyll / MkDocs</span><span class="note">teaser only - full publishing-paths story in deep-dive DD2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">git command line</span><span class="note">honestly: not taught, by design - the web UI does everything this course needs</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Mentions @user + issue refs #123</span><span class="note">noted in Part 3 self-study - collaboration territory, beyond the profile page</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The 4 requirements</b><span>Repo name = username exactly · public · README.md in root · has any content. All four or nothing shows.</span></div>
+      <div class="cheat-item"><b>Create the repo</b><span>New repository → name = your username → Public → check "Add a README file" → Create.</span></div>
+      <div class="cheat-item"><b>The publish loop</b><span>Pencil ✏️ to edit → Preview tab to check → Commit with a short message. Live on refresh.</span></div>
+      <div class="cheat-item"><b>Flavors rule of thumb</b><span>Session 1 basics work everywhere; GFM extras work on GitHub + most modern tools; check the app for the rest.</span></div>
+      <div class="cheat-item"><b>Where markdown lives</b><span>GitHub, Notion, Obsidian, Slack, Reddit, wikis, docs tools, and every AI chat - one syntax, learned once.</span></div>
+      <div class="cheat-item"><b>Tweak-streak habit</b><span>One tiny commit a week for 30 days. Edits are cheap, History keeps everything, your page stays alive.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 4 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="03-polish.html">← Session 3: Polish</a> &nbsp;·&nbsp; <a href="41-markdown-for-ai.html">Deep dives →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 2 · Structure: images, quotes, code and tables - learn markdown with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-markdown-with-phoebe</a> / Session 2 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Markdown with Phoebe · Session 2 of 4</div>
+    <h1>Structure: <span class="accent">images, quotes, code and tables</span></h1>
+    <p class="sub">Last week your about-me page learned to talk - headings, a paragraph, a hobby list, a link. Today it learns to show: your photo, a quote you live by, a real skills table and a checklist of what you're learning. Bring your Session 1 draft; we grow that exact file.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Easy</span>
+      <span class="chip audience">Total beginners</span>
+      <span class="chip audience">Bring Session 1's draft</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Grow your page</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where your page stands</h2>
+    </div>
+    <p class="lede">Right now your draft has a name, an intro with some bold and italic, three hobbies and one link - a talking business card. Text-only pages read fine but scroll past fast. Session 2 adds the things eyes stop for: a picture, a pull-quote, code that looks like code, and your first table. Half of today is also your first taste of GitHub Flavored Markdown - the dialect your page will actually live in.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR page</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A photo at the top of your page, a favorite quote in a proper blockquote, a skills table with aligned columns, and a "currently learning" checklist - plus the debugging instincts for the three ways each of them classically breaks.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: PICTURES AND QUOTES ============ -->
+  <section class="section" id="pictures-quotes">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers CommonMark tutorial lessons 5 + 8, Markdown Guide basic syntax</span>
+      <h2>Pictures and quotes <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Two elements, one shared idea: both borrow syntax you already know. An image is a link with a <span class="syn-chip">!</span> in front; a quote is a paragraph with a <span class="syn-chip">&gt;</span> in front.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Images: a link that shows instead of takes you<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">![</span><span class="mkw">Phoebe waving hello</span><span class="mk">](</span>https://github.com/you.png<span class="mk"> "hi!")</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <div style="width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,#8FAEE3,#2E63C4);display:flex;align-items:center;justify-content:center;font-size:2.1rem">👋</div>
+            <p style="margin-top:.4rem;font-size:.8rem;color:var(--muted)">your actual photo, rendered on the page</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Same shape as a link, plus a bang:</strong> <span class="syn-chip">![alt text](image-url "title")</span>. The <span class="syn-chip">!</span> is the whole difference - forget it and you get a clickable link instead of a picture.</li>
+          <li><strong>Alt text is not decoration - it's accessibility.</strong> Screen readers speak it, and it displays whenever the image fails to load. Describe the picture: "Phoebe hiking at sunrise", not "image1".</li>
+          <li><strong>The URL must point at an actual image file</strong> (.png, .jpg, .gif...), not at a page that contains one. Your GitHub avatar has a permanent one: <span class="syn-chip">https://github.com/USERNAME.png</span>.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>Why pros sweat the alt text:</strong> on a slow connection, GitHub shows the alt text while the image loads - and if the link ever rots, the alt text is all anyone sees. A README full of <span class="syn-chip">![](...)</span> with empty alts degrades into mystery gaps; one with real alts still reads like a page. Accessibility and durability, one habit.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Blockquotes: give words a stage<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mkq">&gt; </span><span class="mkw">Ship early, ship often.</span>
+<span class="mkq">&gt;</span>
+<span class="mkq">&gt; </span>Two lines, one quote -
+<span class="mkq">&gt; </span>every line carries the <span class="mkq">&gt;</span>.</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <blockquote><p><strong>Ship early, ship often.</strong></p><p style="margin-top:.4rem">Two lines, one quote - every line carries the &gt;.</p></blockquote>
+          </div>
+        </div>
+        <ul>
+          <li><strong>One character:</strong> start the line with <span class="syn-chip">&gt; </span> and it renders as an indented, styled quote block. Anything can live inside - bold, links, even lists.</li>
+          <li><strong>The gotcha that gets everyone:</strong> a blank line INSIDE a quote must also carry the <span class="syn-chip">&gt;</span>, alone on its line. A truly empty line ends the quote, and the second half falls out as a normal paragraph. This is quiz question one - and Demo 3 breaks it live.</li>
+          <li><strong>Nesting:</strong> <span class="syn-chip">&gt;&gt; </span> quotes a quote - the reply-to-a-reply look you know from email.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Linked images + an escaping recap<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>A clickable image</strong> is an image wrapped in a link: <span class="syn-chip">[![alt](image-url)](target-url)</span>. Read it inside-out: the image renders, the outer brackets make it a link. Badges in Session 3 use exactly this.</li>
+          <li><strong>Escaping recap from Session 1:</strong> to show a literal <span class="syn-chip">!</span>, <span class="syn-chip">&gt;</span> or bracket, backslash it: <span class="syn-chip">\&gt; not a quote</span>. The full escapable set is on your Session 1 cheat sheet.</li>
+          <li><strong>Image sizing:</strong> pure markdown has none. Where you need it (and GitHub allows it), drop to HTML: <span class="syn-chip">&lt;img src="..." width="300"&gt;</span>. More HTML workarounds in Part 3.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: CODE ============ -->
+  <section class="section" id="code">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers CommonMark tutorial lesson 9, Markdown Guide basic + extended</span>
+      <h2>Code that looks like code <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">Even a non-programmer's page mentions technical things - keyboard shortcuts, file names, commands. Markdown gives them a monospace costume so they read as "type this exactly", two ways: inline and block.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Inline code: backticks around the words<span class="mini">1.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span>Press <span class="mkx">`</span><span class="mkw">Ctrl+S</span><span class="mkx">`</span> to save, then run
+<span class="mkx">`</span><span class="mkw">git status</span><span class="mkx">`</span> to check.</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <p>Press <span class="syn-chip">Ctrl+S</span> to save, then run <span class="syn-chip">git status</span> to check.</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>The backtick</strong> <span class="syn-chip">`</span> is the key next to 1 (not an apostrophe!). Wrap file names, shortcuts, commands, anything meant literally: <span class="syn-chip">`README.md`</span>.</li>
+          <li><strong>Bonus power:</strong> inside backticks, markdown is OFF. <span class="syn-chip">`**not bold**`</span> shows the stars - handy for writing ABOUT markdown.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Fenced code blocks: three backticks build a wall<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mkx">```python</span>
+<span class="mkw">print</span>("hello, markdown")
+<span class="mkx">```</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <div style="background:#0A1E42;border-radius:8px;padding:.6rem .8rem;font:400 .8rem/1.7 ui-monospace,Menlo,monospace"><span style="color:#F59E0B">print</span><span style="color:#D9E4F7">(</span><span style="color:#34D399">"hello, markdown"</span><span style="color:#D9E4F7">)</span></div>
+            <p style="margin-top:.4rem;font-size:.8rem;color:var(--muted)">a shaded block, colored by language</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Open with</strong> <span class="syn-chip">```</span> <strong>on its own line, close with</strong> <span class="syn-chip">```</span> <strong>on its own line.</strong> Everything between renders exactly as typed - spacing, stars, hashes, all literal.</li>
+          <li><strong>Name the language after the opening fence</strong> - <span class="syn-chip">```python</span>, <span class="syn-chip">```sql</span>, <span class="syn-chip">```html</span> - and renderers that support highlighting color it. The info string is standard CommonMark; whether colors actually appear is up to the renderer. GitHub: yes.</li>
+          <li><strong>An unclosed fence swallows the rest of your page.</strong> If everything below a code block suddenly turns monospace, you forgot the closing <span class="syn-chip">```</span>. Demo 3 does this on purpose.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The most-typed markdown at work:</strong> pasting an error into a chat or GitHub issue inside a <span class="syn-chip">```</span> fence. Unfenced, the error's underscores and brackets get mangled into italics and links; fenced, it arrives character-perfect and the person helping you can actually read it. People notice who fences.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The old way, and backticks inside backticks<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Indented code blocks:</strong> before fences existed, indenting a line 4 spaces made it code - which is exactly why Session 1 warned you never to indent paragraphs. You'll meet this in older documents; write fences yourself, they're clearer and they take a language name.</li>
+          <li><strong>A literal backtick inside inline code:</strong> wrap with DOUBLE backticks: <span class="syn-chip">`` a ` inside ``</span>. Rare, but unforgettable once you've needed it.</li>
+          <li><strong>Code inside a list item:</strong> a fence works, or indent the code 8 spaces (4 for the list nesting + 4 for code).</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: TABLES AND CHECKLISTS ============ -->
+  <section class="section" id="tables-checklists">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers Markdown Guide extended syntax + GitHub Docs</span>
+      <h2>Tables and checklists - your first GFM <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Milestone moment: everything until now was core markdown that works everywhere. Tables and task lists are <strong>extended syntax</strong> - GitHub Flavored Markdown (GFM). Not every app renders them, but GitHub does, and GitHub is exactly where your page lives. Welcome to the dialect of your new home.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Tables: pipes for columns, dashes for the header line<span class="mini">2.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">| </span><span class="mkw">Skill</span><span class="mk"> | </span><span class="mkw">Level</span><span class="mk"> |</span>
+<span class="mk">| --- | --- |</span>
+<span class="mk">| </span>Excel<span class="mk"> | </span>strong<span class="mk"> |</span>
+<span class="mk">| </span>Python<span class="mk"> | </span>learning<span class="mk"> |</span></div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <table><tr><th>Skill</th><th>Level</th></tr><tr><td>Excel</td><td>strong</td></tr><tr><td>Python</td><td>learning</td></tr></table>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Three rules:</strong> pipes <span class="syn-chip">|</span> separate columns, row one is the header, and row two MUST be dashes (<span class="syn-chip">---</span>, at least three per column). No dash row, no table - just a paragraph full of pipes. The #1 table bug.</li>
+          <li><strong>Columns don't need to line up in the source.</strong> Ragged pipes render as a perfect grid - the renderer does the alignment, not you. (Lining them up anyway is a kindness to whoever reads the raw file.)</li>
+          <li><strong>A literal pipe in a cell</strong> needs escaping: <span class="syn-chip">\|</span>.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Column alignment: colons steer the dashes<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Add colons to the dash row to control each column: <span class="syn-chip">:---</span> left, <span class="syn-chip">:---:</span> center, <span class="syn-chip">---:</span> right. Memory hook: the colon is a magnet - the text sticks to its side.</p>
+        <div class="rp-out" style="margin-top:.6rem">
+          <table><tr><th style="text-align:left">:--- left</th><th style="text-align:center">:---: center</th><th style="text-align:right">---: right</th></tr><tr><td style="text-align:left">words</td><td style="text-align:center">levels</td><td style="text-align:right">1,240</td></tr></table>
+        </div>
+        <p style="margin-top:.5rem">Right-align number columns and they read like a spreadsheet; center short status words. Small touch, instantly more professional.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Task lists: checkboxes that render for real<span class="mini">1.5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="rawpair">
+          <div class="rp-raw"><span class="rp-label">You type</span><span class="mk">- [</span><span class="mkb">x</span><span class="mk">] </span><span class="mkw">Markdown basics</span>
+<span class="mk">- [ ] </span>Tables and checklists
+<span class="mk">- [ ] </span>Go live on GitHub</div>
+          <span class="rp-arrow">→</span>
+          <div class="rp-out"><span class="rp-label">Browser shows</span>
+            <ul style="list-style:none;margin-left:.2rem"><li><input type="checkbox" checked disabled> <strong>Markdown basics</strong></li><li><input type="checkbox" disabled> Tables and checklists</li><li><input type="checkbox" disabled> Go live on GitHub</li></ul>
+          </div>
+        </div>
+        <ul>
+          <li><strong>A regular list item plus brackets:</strong> <span class="syn-chip">- [ ]</span> unchecked, <span class="syn-chip">- [x]</span> checked. The space inside the empty brackets matters.</li>
+          <li><strong>On GitHub these are real checkboxes</strong> - in issues you can click them; on your profile they render as a live progress list. A "currently learning" checklist with one box already ticked says more about you than a paragraph could.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>Say it plainly: this part is GFM</strong>
+          Tables and task lists are extended syntax. Paste them into an app that only speaks core markdown and you'll see raw pipes and brackets - not broken, just unsupported. Rule of thumb: Sessions 1-2 core elements work everywhere; from here on, check the app. Your page's app is GitHub, which renders all of today.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Table limits, strikethrough, and two small traps<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>What table cells CANNOT hold:</strong> headings, lists, blockquotes, code blocks, horizontal rules - block elements don't fit in cells. Bold, italic, links, inline code are fine.</li>
+          <li><strong>The HTML workaround:</strong> need a line break inside a cell? <span class="syn-chip">&lt;br&gt;</span>. Need a list-ish cell? <span class="syn-chip">item one&lt;br&gt;item two</span>. Beyond that, consider whether it should be a table at all.</li>
+          <li><strong>Strikethrough:</strong> <span class="syn-chip">~~like this~~</span> renders <s>like this</s> - also GFM. Fun on a learning list: <span class="syn-chip">~~fear of markdown~~</span>.</li>
+          <li><strong>Task-list trap:</strong> a task starting with an open parenthesis needs an escape: <span class="syn-chip">- [ ] \(Optional) stretch goal</span>.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4: THE PROJECT ============ -->
+  <section class="section" id="the-project">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the running project</span>
+      <h2>Milestone 2 of 4 <span class="tag concept">1 min live</span></h2>
+    </div>
+    <p class="lede">Same file, second growth spurt. After today's demos your page has a face, a voice, and data - halfway to shipping.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The four-session roadmap with milestone 2, structure, highlighted as the current session">
+        <style>
+          .s2rT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .s2rX { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+          .s2rH { font: 700 12px Inter, sans-serif; fill: #D97706; }
+          .s2rA { stroke: #C3CDE0; stroke-width: 2; fill: none; marker-end: url(#s2rAh); }
+        </style>
+        <defs>
+          <marker id="s2rAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C3CDE0" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="30" y="55" width="180" height="46" rx="10" fill="#052C70"/>
+        <text class="s2rT" x="52" y="83">1 · Page drafted ✓</text>
+        <rect x="245" y="55" width="180" height="46" rx="10" fill="#083FA1" stroke="#D97706" stroke-width="3"/>
+        <text class="s2rT" x="267" y="83">2 · Structure in</text>
+        <text class="s2rH" x="267" y="45">YOU ARE HERE</text>
+        <rect x="460" y="55" width="180" height="46" rx="10" fill="#2E63C4"/>
+        <text class="s2rT" x="490" y="83">3 · Looks pro</text>
+        <rect x="675" y="55" width="180" height="46" rx="10" fill="#16233B"/>
+        <text class="s2rT" x="695" y="83">4 · Live on GitHub</text>
+        <line class="s2rA" x1="212" y1="78" x2="240" y2="78"/>
+        <line class="s2rA" x1="427" y1="78" x2="455" y2="78"/>
+        <line class="s2rA" x1="642" y1="78" x2="670" y2="78"/>
+        <text class="s2rX" x="30" y="130">headings, intro, hobby</text>
+        <text class="s2rX" x="30" y="146">list, one link (done!)</text>
+        <text class="s2rX" x="245" y="130">photo, quote, skills</text>
+        <text class="s2rX" x="245" y="146">table, checklist (today)</text>
+        <text class="s2rX" x="460" y="130">badges, emoji, diagram,</text>
+        <text class="s2rX" x="460" y="146">collapsible extras</text>
+        <text class="s2rX" x="675" y="130">the username/username</text>
+        <text class="s2rX" x="675" y="146">repo trick + commit</text>
+        <text class="s2rX" x="30" y="182">Missed Session 1? Open stackedit.io, type a # heading, a paragraph and a - list, and you're caught up enough to build along today.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the roadmap: milestone 2 of 4, your page gets structure today</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Add your photo and a quote you live by <span class="tag demo">★ 7 min · everyone builds</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open <a href="https://stackedit.io/app">stackedit.io/app</a> and bring back your Session 1 draft (paste it in if you saved it elsewhere - it's just text).</p></div>
+      <div class="step"><p>Right under your <span class="syn-chip"># Name</span> heading, add your photo: <span class="syn-chip">![short description of you](image-url)</span>. Easiest URL: your GitHub avatar at <span class="syn-chip">https://github.com/USERNAME.png</span> - or any image address you like. Watch it appear in the right pane.</p></div>
+      <div class="step"><p>Write REAL alt text - describe the picture as you'd describe it to someone on the phone. This is the accessibility habit, formed on day one.</p></div>
+      <div class="step"><p>Add a new section: <span class="syn-chip">## Words I live by</span> (blank lines around it!), then your favorite quote as a blockquote: <span class="syn-chip">&gt; the quote</span>. Add an attribution line below it, also starting with <span class="syn-chip">&gt;</span>, and keep the <span class="syn-chip">&gt;</span> on the blank line between them.</p></div>
+      <div class="step"><p>Read the right pane. A page with a face and a voice already feels like a profile, not a form.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Build your skills table and learning checklist <span class="tag demo">★ 10 min · everyone builds</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>New section: <span class="syn-chip">## Skills</span>. Take the 4-6 skills you collected for homework and give the table its skeleton first - header row, then the dash row: <span class="syn-chip">| Skill | Level | Notes |</span> over <span class="syn-chip">| --- | --- | --- |</span>. Watch the right pane: no table yet? Check the dash row.</p></div>
+      <div class="step"><p>Add one row per skill: <span class="syn-chip">| Excel | strong | my home turf |</span>. Don't fuss over lining up the pipes - the renderer aligns everything for you.</p></div>
+      <div class="step"><p>Steer the columns: make Level centered with <span class="syn-chip">:---:</span> in its dash cell. If you had a numbers column, <span class="syn-chip">---:</span> would right-align it.</p></div>
+      <div class="step"><p>New section: <span class="syn-chip">## Currently learning</span>. Three task-list items: <span class="syn-chip">- [x] Markdown basics</span> (earned it!), then two <span class="syn-chip">- [ ]</span> boxes for what's next.</p></div>
+      <div class="step"><p>Discernment lap: does the Notes column earn its place? Would a shorter table read better? Tables are for scanning - trim until they scan.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>Skim the READMEs of people you admire on GitHub: the ones that stick use a small table or checklist near the top - skills, current projects, "now learning". Recruiters and collaborators scan those in seconds. Your table today is that exact asset, and Friday-you will thank Wednesday-you for the checked first box.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>Break it on purpose, round two <span class="tag demo">★ 5 min · follow along</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>In your quote, delete the <span class="syn-chip">&gt;</span> from the blank line between quote and attribution. Watch the quote split - attribution falls out as a plain paragraph. Put the <span class="syn-chip">&gt;</span> back, watch it rejoin.</p></div>
+      <div class="step"><p>Delete your table's dash row. The whole table collapses into one sad paragraph of pipes. Restore the dashes - at least three per column - and the grid snaps back.</p></div>
+      <div class="step"><p>Delete the closing <span class="syn-chip">```</span> of a code block and watch it swallow everything below it into monospace. Close the fence, page restored.</p></div>
+      <div class="step"><p>Say each diagnosis out loud: quote split = blank line lost its <span class="syn-chip">&gt;</span> · pipes showing = dash row missing · page went monospace = unclosed fence. That's the whole Session 2 debugging kit.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Why break things, again?</strong>
+      Same logic as Session 1: a bug you've caused on purpose takes two seconds to fix when it happens by accident. These three are the bugs you WILL meet this week.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Finish the new sections</strong> if the session ran short: photo with real alt text, quote block, skills table, learning checklist. Your draft should now scroll like a real profile.</li>
+      <li><strong>Run CommonMark tutorial lessons 8-10</strong> at <a href="https://commonmark.org/help/tutorial/">commonmark.org/help/tutorial</a> - images, code, and nested lists, interactive, about 5 minutes.</li>
+      <li><strong>Go window-shopping:</strong> browse three real GitHub profile READMEs at <a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme">awesome-github-profile-readme</a>. You can now READ their source - notice how much is just today's and last week's elements.</li>
+      <li><strong>Bring a steal list to Session 3:</strong> note 2-3 things you saw and want - badges? emoji? a stats card? a diagram? Session 3 is exactly that shopping trip.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your two-line blockquote keeps splitting in half. What's the classic cause?</p>
+      <button class="qopt" type="button">A · Blockquotes can only hold one line each</button>
+      <button class="qopt" type="button">B · The blank line between the halves needs its own &gt; to keep the quote together</button>
+      <button class="qopt" type="button">C · You must indent the second line four spaces</button>
+      <p class="qwhy">A truly empty line ends a blockquote. Keep multi-part quotes together by putting a lone &gt; on the blank line - the gotcha from Demo 3.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · You paste your beautiful skills table into another app and see raw pipes. Why?</p>
+      <button class="qopt" type="button">A · You forgot to close the table with ```</button>
+      <button class="qopt" type="button">B · Tables only work in paid apps</button>
+      <button class="qopt" type="button">C · Tables are extended syntax (GFM) - not every markdown app supports them; GitHub does</button>
+      <p class="qwhy">Core markdown works everywhere; tables and task lists are GitHub Flavored Markdown extras. Your page lives on GitHub, so you're safe at home - but check before assuming elsewhere.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · What is the alt text in ![alt text](url) actually for?</p>
+      <button class="qopt" type="button">A · Screen readers speak it, and it shows whenever the image fails to load</button>
+      <button class="qopt" type="button">B · It's the caption printed under the image</button>
+      <button class="qopt" type="button">C · It's the file name the image saves as</button>
+      <p class="qwhy">Alt text is accessibility plus a safety net: it's what blind and low-vision readers hear, and what everyone sees if the image link ever breaks. Write it like a description, not a label.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of the canonical materials: the interactive tutorial at <a href="https://commonmark.org/help/">commonmark.org</a>, the basic and extended syntax references at <a href="https://www.markdownguide.org/">markdownguide.org</a>, and GitHub's own <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">writing and formatting docs</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CommonMark tutorial, lessons 8-9</span><span class="note">images, inline code, fenced blocks - Parts 1-2 + demos</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CommonMark tutorial, lesson 5</span><span class="note">blockquotes, nesting, the blank-line rule - Part 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Markdown Guide: basic syntax (second half)</span><span class="note">images, blockquotes, code, escaping recap - Parts 1-2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Markdown Guide: extended syntax (partial)</span><span class="note">tables + alignment, task lists, fenced blocks + highlighting - Parts 2-3; rest lands in Session 3</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">GitHub Docs: tables + task lists</span><span class="note">GFM behavior your profile page relies on - Part 3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Strikethrough ~~text~~</span><span class="note">GFM extra - Part 3 self-study card</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">CommonMark tutorial, lesson 10 (nested lists)</span><span class="note">Session 1 self-study + code-in-lists note here; practice in the tutorial</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Images</b><span>![alt text](image-url "title") - the ! makes a link show instead of take you. Alt text = accessibility.</span></div>
+      <div class="cheat-item"><b>Blockquotes</b><span>&gt; quote - every line carries the &gt;, including blank lines inside. &gt;&gt; nests.</span></div>
+      <div class="cheat-item"><b>Inline code</b><span>`code` - backtick (key next to 1). Markdown is OFF inside; literal ` needs `` double ``.</span></div>
+      <div class="cheat-item"><b>Fenced blocks</b><span>```lang ... ``` - fences on their own lines, language name for highlighting, ALWAYS close the fence.</span></div>
+      <div class="cheat-item"><b>Tables (GFM)</b><span>| col | col | with a --- dash row under the header. Align: :--- left, :---: center, ---: right.</span></div>
+      <div class="cheat-item"><b>Task lists (GFM)</b><span>- [ ] to do · - [x] done. Real checkboxes on GitHub; \( if the item starts with a parenthesis.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 2 of 4 · learn-markdown-with-phoebe · by Phoebe Fu</span>
+    <span><a href="01-first-words.html">← Session 1: First words</a> &nbsp;·&nbsp; <a href="03-polish.html">Session 3: Polish →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
