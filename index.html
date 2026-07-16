@@ -51,6 +51,17 @@
   .dd-strip h2 { font-size: 1.05rem; font-weight: 800; margin-bottom: .2rem; }
   .dd-strip p { font-size: .85rem; color: var(--muted); margin-bottom: .6rem; }
   .dd-strip .ddlinks { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff, #F6FAFD); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
 </style>
 </head>
 <body>
@@ -99,6 +110,12 @@ with <span class="mkb">**</span><span class="mkw">Phoebe</span><span class="mkb"
       </div>
     </div>
   </div>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
 
   <section class="section">
     <div class="course-grid">
@@ -174,6 +191,35 @@ with <span class="mkb">**</span><span class="mkw">Phoebe</span><span class="mkb"
   </footer>
 </main>
 
+<script>
+window.MINDMAP_DATA = {
+  title: "Learn\nMarkdown",
+  centerColor: "#052C70",
+  sessions: [
+    { label: "First\nwords", href: "courses/01-first-words.html", color: "#34D399",
+      concepts: [
+        { label: "What markdown is", href: "courses/01-first-words.html" },
+        { label: "Headings & text", href: "courses/01-first-words.html" },
+        { label: "Bold, lists, links", href: "courses/01-first-words.html" } ] },
+    { label: "Structure", href: "courses/02-structure.html", color: "#FBBF24",
+      concepts: [
+        { label: "Images & quotes", href: "courses/02-structure.html" },
+        { label: "Code blocks", href: "courses/02-structure.html" },
+        { label: "Tables & tasks", href: "courses/02-structure.html" } ] },
+    { label: "Polish", href: "courses/03-polish.html", color: "#FB923C",
+      concepts: [
+        { label: "Badges & emoji", href: "courses/03-polish.html" },
+        { label: "Collapsibles & TOC", href: "courses/03-polish.html" },
+        { label: "Mermaid diagrams", href: "courses/03-polish.html" } ] },
+    { label: "Ship it", href: "courses/04-ship-it.html", color: "#F87171",
+      concepts: [
+        { label: "GitHub basics", href: "courses/04-ship-it.html" },
+        { label: "The magic repo", href: "courses/04-ship-it.html" },
+        { label: "What's next", href: "courses/04-ship-it.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
 <script src="assets/app.js?v=1"></script>
 </body>
 </html>
