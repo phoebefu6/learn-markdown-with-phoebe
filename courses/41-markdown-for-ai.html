@@ -79,6 +79,32 @@
       <summary><span class="mode self">Self-study</span>From blob to blueprint: your first structured prompt<span class="mini">4 min</span><span class="caret">▶</span></summary>
       <div class="body">
         <p>Most prompts are one breathless blob: <em>"rewrite this email to be formal but short also keep the friday date hi team the launch moved to friday thanks"</em>. Where does the instruction end and the email begin? The model has to guess. Structure removes the guessing:</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after comparison of a prompt. The blob version runs instructions and the email together with no separation, so the model has to guess where one ends and the other begins. The structured version gives the task, the constraints, and the email each their own markdown heading, removing the guesswork.">
+    <style>
+      .ai1H { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .ai1C { font: 700 11.5px Consolas, monospace; fill: #052C70; }
+      .ai1B { font: 400 12px Inter, sans-serif; fill: #16233B; }
+      .ai1N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="300" fill="#FFFFFF"/>
+    <rect x="40" y="50" width="390" height="180" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+    <text class="ai1H" x="58" y="84">&#10007; one blob, no structure</text>
+    <text class="ai1B" x="58" y="114">rewrite this email to be formal but</text>
+    <text class="ai1B" x="58" y="134">short also keep the friday date hi</text>
+    <text class="ai1B" x="58" y="154">team the launch moved to friday</text>
+
+    <rect x="450" y="50" width="390" height="180" rx="12" fill="#EAF0FA" stroke="#083FA1" stroke-width="1.5"/>
+    <text class="ai1H" x="468" y="84">&#10003; Task, Constraints, Email</text>
+    <text class="ai1C" x="468" y="114"># Task</text>
+    <text class="ai1C" x="468" y="134">## Constraints - keep it short</text>
+    <text class="ai1C" x="468" y="154">## Email (fenced below)</text>
+
+    <text class="ai1N" x="40" y="276">The task, the rules, and the material each live under their own heading, nothing confused.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - a heading skeleton removes the guessing a blob forces on the model</figcaption>
+</figure>
+
         <div class="rawpair">
           <div class="rp-raw"><span class="rp-label">The structured prompt - you type</span><span class="mk"># </span><span class="mkw">Task</span>
 Rewrite the email below to be more formal.
@@ -179,6 +205,52 @@ A sales dashboard in Python.
           <span class="rp-arrow">→</span>
           <div class="rp-out"><span class="rp-label">What it does</span>
             <p>The AI tool reads this file at the start of every session in the project. It now knows what the project is and follows your three rules without you repeating them in every prompt - standing instructions, written once.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 234" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A CLAUDE.md instruction file with three rules, next to three separate AI sessions, each one automatically applying all three rules, pandas, tests, ask first, showing that standing instructions written once apply at the start of every new session without being repeated in the prompt.">
+    <style>
+      .ai2T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .ai2H { font: 700 11px Inter, sans-serif; fill: #5C6B84; letter-spacing: .05em; }
+      .ai2C { font: 400 11px Consolas, monospace; fill: #D9E4F7; }
+      .ai2S { font: 700 11px Inter, sans-serif; fill: #052C70; }
+      .ai2K { font: 400 10.5px Inter, sans-serif; fill: #16233B; }
+      .ai2N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="234" fill="#FFFFFF"/>
+    <text class="ai2T" x="40" y="26">One file, read at the start of every session</text>
+    <text class="ai2H" x="40" y="42">CLAUDE.MD</text>
+    <text class="ai2H" x="460" y="42">EVERY SESSION APPLIES IT</text>
+
+    <rect x="40" y="46" width="390" height="130" rx="8" fill="#071B3D"/>
+    <text class="ai2C" x="52" y="64"># Project</text>
+    <text class="ai2C" x="52" y="78">A sales dashboard in Python.</text>
+    <text class="ai2C" x="52" y="92">## Rules</text>
+    <text class="ai2C" x="52" y="106">- Use pandas for all data work</text>
+    <text class="ai2C" x="52" y="120">- Write a test for every function</text>
+    <text class="ai2C" x="52" y="134">- Ask before adding a dependency</text>
+
+    <rect x="460" y="54" width="110" height="90" rx="8" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="ai2S" x="515" y="72" text-anchor="middle">Session 1</text>
+    <text class="ai2K" x="515" y="90" text-anchor="middle">&#10003; pandas</text>
+    <text class="ai2K" x="515" y="106" text-anchor="middle">&#10003; tests</text>
+    <text class="ai2K" x="515" y="122" text-anchor="middle">&#10003; ask first</text>
+
+    <rect x="590" y="54" width="110" height="90" rx="8" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="ai2S" x="645" y="72" text-anchor="middle">Session 2</text>
+    <text class="ai2K" x="645" y="90" text-anchor="middle">&#10003; pandas</text>
+    <text class="ai2K" x="645" y="106" text-anchor="middle">&#10003; tests</text>
+    <text class="ai2K" x="645" y="122" text-anchor="middle">&#10003; ask first</text>
+
+    <rect x="720" y="54" width="110" height="90" rx="8" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="ai2S" x="775" y="72" text-anchor="middle">Session 3</text>
+    <text class="ai2K" x="775" y="90" text-anchor="middle">&#10003; pandas</text>
+    <text class="ai2K" x="775" y="106" text-anchor="middle">&#10003; tests</text>
+    <text class="ai2K" x="775" y="122" text-anchor="middle">&#10003; ask first</text>
+
+    <text class="ai2N" x="40" y="210">Standing instructions, written once - no prompt on this project repeats the three rules.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - the file is read fresh every session, so the rules never need repeating</figcaption>
+</figure>
+
           </div>
         </div>
         <ul>

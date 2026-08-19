@@ -84,6 +84,37 @@
         <div class="callout example">
           <span class="ex-pill">Real world</span>
           <p><strong>Why pros sweat the alt text:</strong> on a slow connection, GitHub shows the alt text while the image loads - and if the link ever rots, the alt text is all anyone sees. A README full of <span class="syn-chip">![](...)</span> with empty alts degrades into mystery gaps; one with real alts still reads like a page. Accessibility and durability, one habit.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One image markdown line next to its two possible renders: when the file loads, the actual photo appears, but on a slow connection or a dead link, the alt text Phoebe waving hello shows in its place, proving alt text is what a reader actually sees when the image fails.">
+    <style>
+      .ms1T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .ms1H { font: 700 11px Inter, sans-serif; fill: #5C6B84; letter-spacing: .05em; }
+      .ms1C { font: 400 11px Consolas, monospace; fill: #D9E4F7; }
+      .ms1B { font: 700 12px Inter, sans-serif; fill: #052C70; }
+      .ms1L { font: 400 11.5px Inter, sans-serif; fill: #5C6B84; }
+      .ms1N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="210" fill="#FFFFFF"/>
+    <text class="ms1T" x="40" y="26">Alt text is what survives when the picture doesn't load</text>
+    <text class="ms1H" x="40" y="42">YOU TYPE</text>
+    <text class="ms1H" x="460" y="42">BROWSER SHOWS</text>
+
+    <rect x="40" y="46" width="390" height="34" rx="6" fill="#071B3D"/>
+    <text class="ms1C" x="52" y="68">![Phoebe waving hello](github.com/you.png "hi!")</text>
+
+    <rect x="460" y="54" width="180" height="42" rx="6" fill="#EAF0FA" stroke="#083FA1" stroke-width="1.5"/>
+    <text class="ms1B" x="550" y="80" text-anchor="middle">[ photo loads ]</text>
+    <text class="ms1L" x="656" y="79">renders: your actual photo</text>
+
+    <rect x="460" y="110" width="180" height="42" rx="6" fill="#FDF3E3" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text class="ms1B" x="550" y="136" text-anchor="middle">Phoebe waving hello</text>
+    <text class="ms1L" x="656" y="135">renders: the alt text alone</text>
+
+    <text class="ms1N" x="40" y="188">On a slow connection or a dead link, the alt text is what actually shows - so make it real.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - a real alt describes the picture, an empty one leaves a mystery gap</figcaption>
+</figure>
+
         </div>
       </div>
     </details>
@@ -217,6 +248,40 @@
       <summary><span class="mode live">Live</span>Column alignment: colons steer the dashes<span class="mini">1 min</span><span class="caret">▶</span></summary>
       <div class="body">
         <p>Add colons to the dash row to control each column: <span class="syn-chip">:---</span> left, <span class="syn-chip">:---:</span> center, <span class="syn-chip">---:</span> right. Memory hook: the colon is a magnet - the text sticks to its side.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A markdown table with a dash row of colon left, colon colon center, and colon right, next to the rendered table it produces: words sits left aligned, levels sits centered, and 1,240 sits right aligned in its column, each cell obeying the colon its column declared.">
+    <style>
+      .ms2T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .ms2H { font: 700 11px Inter, sans-serif; fill: #5C6B84; letter-spacing: .05em; }
+      .ms2C { font: 400 11px Consolas, monospace; fill: #D9E4F7; }
+      .ms2A { font: 700 12px Inter, sans-serif; fill: #5C6B84; }
+      .ms2D { font: 400 12px Inter, sans-serif; fill: #16233B; }
+      .ms2N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="180" fill="#FFFFFF"/>
+    <text class="ms2T" x="40" y="26">Colons on the dash row steer each column's alignment</text>
+    <text class="ms2H" x="40" y="42">YOU TYPE</text>
+    <text class="ms2H" x="460" y="42">BROWSER SHOWS</text>
+
+    <rect x="40" y="46" width="390" height="50" rx="6" fill="#071B3D"/>
+    <text class="ms2C" x="52" y="66">| :--- | :---: | ---: |</text>
+    <text class="ms2C" x="52" y="82">| words | levels | 1,240 |</text>
+
+    <rect x="460" y="46" width="380" height="70" fill="#FFFFFF" stroke="#E5EAF3" stroke-width="1.5"/>
+    <line x1="586" y1="46" x2="586" y2="116" stroke="#E5EAF3" stroke-width="1.5"/>
+    <line x1="713" y1="46" x2="713" y2="116" stroke="#E5EAF3" stroke-width="1.5"/>
+    <text class="ms2A" x="472" y="58">&#8672; left</text>
+    <text class="ms2A" x="650" y="58" text-anchor="middle">center</text>
+    <text class="ms2A" x="828" y="58" text-anchor="end">right &#8674;</text>
+    <text class="ms2D" x="472" y="98">words</text>
+    <text class="ms2D" x="650" y="98" text-anchor="middle">levels</text>
+    <text class="ms2D" x="828" y="98" text-anchor="end">1,240</text>
+
+    <text class="ms2N" x="40" y="150">Ragged pipes in the source still render as a perfect grid - the colon controls alignment.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - the colon's side is the side the text sticks to</figcaption>
+</figure>
+
         <div class="rp-out" style="margin-top:.6rem">
           <table><tr><th style="text-align:left">:--- left</th><th style="text-align:center">:---: center</th><th style="text-align:right">---: right</th></tr><tr><td style="text-align:left">words</td><td style="text-align:center">levels</td><td style="text-align:right">1,240</td></tr></table>
         </div>

@@ -148,6 +148,31 @@
           </tbody>
         </table>
         <p>The pattern: document tools sit near GFM; chat tools borrow the punctuation without the spec. Your core elements survive almost everywhere; everything else deserves a ten-second test.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of what travels and what doesn't. GitHub-only extras like badges, collapsibles and Mermaid vanish with no error outside GitHub and deserve a test first. Core elements, headings, lists, links and tables, survive almost everywhere and can be typed with confidence.">
+    <style>
+      .fx2H { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .fx2B { font: 400 12px Inter, sans-serif; fill: #16233B; }
+      .fx2N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="300" fill="#FFFFFF"/>
+    <rect x="40" y="50" width="390" height="180" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"/>
+    <text class="fx2H" x="58" y="84">&#10007; GitHub-only extras</text>
+    <text class="fx2B" x="58" y="114">badges, collapsibles, Mermaid</text>
+    <text class="fx2B" x="58" y="134">Vanish outside GitHub - no error.</text>
+    <text class="fx2B" x="58" y="154">Test first in any other app.</text>
+
+    <rect x="450" y="50" width="390" height="180" rx="12" fill="#EAF0FA" stroke="#083FA1" stroke-width="1.5"/>
+    <text class="fx2H" x="468" y="84">&#10003; core elements</text>
+    <text class="fx2B" x="468" y="114">headings, lists, links, tables</text>
+    <text class="fx2B" x="468" y="134">Survive almost everywhere.</text>
+    <text class="fx2B" x="468" y="154">Type with confidence, no testing.</text>
+
+    <text class="fx2N" x="40" y="276">Core elements travel with you; extended and platform features deserve a ten-second test first.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - core markdown travels anywhere, GitHub's extras stay on GitHub</figcaption>
+</figure>
+
       </div>
     </details>
 
@@ -185,6 +210,40 @@
           <span class="rp-arrow">→</span>
           <div class="rp-out"><span class="rp-label">You get</span>
             <p>A real Word document: your headings become Word headings, lists become lists, tables become tables. Pandoc infers both formats from the file extensions - swap <span class="syn-chip">.docx</span> for <span class="syn-chip">.html</span> and you get a web page instead.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single pandoc terminal command next to the Word document it produces: a page titled page.docx containing a real bold heading, a bulleted list, and a small table, each converted from the matching markdown element.">
+    <style>
+      .fx1T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .fx1H { font: 700 11px Inter, sans-serif; fill: #5C6B84; letter-spacing: .05em; }
+      .fx1C { font: 400 11px Consolas, monospace; fill: #D9E4F7; }
+      .fx1P { font: 700 11px Inter, sans-serif; fill: #FFFFFF; }
+      .fx1D { font: 700 12px Inter, sans-serif; fill: #16233B; }
+      .fx1L { font: 400 11px Inter, sans-serif; fill: #16233B; }
+      .fx1N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="240" fill="#FFFFFF"/>
+    <text class="fx1T" x="40" y="26">One command turns markdown into a real Word document</text>
+    <text class="fx1H" x="40" y="42">YOU RUN</text>
+    <text class="fx1H" x="460" y="42">YOU GET</text>
+
+    <rect x="40" y="46" width="390" height="34" rx="6" fill="#071B3D"/>
+    <text class="fx1C" x="52" y="68">$ pandoc page.md -o page.docx</text>
+
+    <rect x="460" y="50" width="220" height="140" fill="#FFFFFF" stroke="#E5EAF3" stroke-width="1.5"/>
+    <rect x="460" y="50" width="220" height="22" fill="#083FA1"/>
+    <text class="fx1P" x="570" y="65" text-anchor="middle">page.docx</text>
+    <text class="fx1D" x="472" y="92">Heading</text>
+    <text class="fx1L" x="472" y="110">- list item</text>
+    <text class="fx1L" x="472" y="124">- list item</text>
+    <rect x="472" y="134" width="190" height="40" fill="#FFFFFF" stroke="#C3CDE0"/>
+    <line x1="472" y1="154" x2="662" y2="154" stroke="#C3CDE0"/>
+    <line x1="567" y1="134" x2="567" y2="174" stroke="#C3CDE0"/>
+
+    <text class="fx1N" x="40" y="214">Pandoc infers the format from the file extension - swap .docx for .html for a web page.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - the -o extension is the only thing that picks the output format</figcaption>
+</figure>
+
           </div>
         </div>
         <ul>

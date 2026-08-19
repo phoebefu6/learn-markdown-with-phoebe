@@ -82,6 +82,37 @@
         <div class="callout example">
           <span class="ex-pill">Real world</span>
           <p>Open any famous repo - React, VS Code, pandas - and the first thing under the title is a badge row: build passing, version, license, downloads. Those are all shields.io-style images. Your "Made with Markdown" badge uses the exact same mechanism as a badge with 20 million weekly viewers.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A shields.io image markdown line next to the badge it renders: a two-tone pill with a dark Made with label on the left and a blue Markdown message on the right, the same label-message-color pattern used by every badge row on a famous GitHub repo.">
+    <style>
+      .mp1T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .mp1H { font: 700 11px Inter, sans-serif; fill: #5C6B84; letter-spacing: .05em; }
+      .mp1C { font: 400 11px Consolas, monospace; fill: #D9E4F7; }
+      .mp1W { font: 700 11.5px Inter, sans-serif; fill: #FFFFFF; }
+      .mp1L { font: 700 9.5px Inter, sans-serif; fill: #5C6B84; letter-spacing: .04em; }
+      .mp1N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="180" fill="#FFFFFF"/>
+    <text class="mp1T" x="40" y="26">Session 2's image syntax, pointed at a badge generator</text>
+    <text class="mp1H" x="40" y="42">YOU TYPE</text>
+    <text class="mp1H" x="460" y="42">BROWSER SHOWS</text>
+
+    <rect x="40" y="46" width="390" height="50" rx="6" fill="#071B3D"/>
+    <text class="mp1C" x="52" y="66">![Made with]</text>
+    <text class="mp1C" x="52" y="82">(shields.io/badge/Made%20with-Markdown-blue)</text>
+
+    <rect x="460" y="70" width="95" height="26" rx="13" fill="#16233B"/>
+    <text class="mp1W" x="507" y="87" text-anchor="middle">Made with</text>
+    <rect x="545" y="70" width="115" height="26" rx="13" fill="#083FA1"/>
+    <text class="mp1W" x="602" y="87" text-anchor="middle">Markdown</text>
+    <text class="mp1L" x="460" y="112">LABEL</text>
+    <text class="mp1L" x="545" y="112">MESSAGE - COLOR</text>
+
+    <text class="mp1N" x="40" y="146">LABEL, hyphen, MESSAGE, hyphen, COLOR - spaces become %20. One pattern, endless badges.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - a badge is just Session 2's image syntax pointed at a pill generator</figcaption>
+</figure>
+
         </div>
       </div>
     </details>
@@ -170,6 +201,41 @@
         <div class="callout example">
           <span class="ex-pill">Real world</span>
           <p>GitHub's own bug-report templates hide environment logs inside <span class="syn-chip">&lt;details&gt;</span> blocks so maintainers see the summary first, and long project READMEs open with a linked table of contents. The moment your page scrolls more than two screens, these two features stop being decoration and become navigation.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A details and summary block with two fun facts, next to its two rendered states: collapsed shows only a right-pointing triangle and the words Fun facts about me, expanded shows a down-pointing triangle plus both bullet facts, climbed a volcano and alphabetizes spices.">
+    <style>
+      .mp2T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .mp2H { font: 700 11px Inter, sans-serif; fill: #5C6B84; letter-spacing: .05em; }
+      .mp2C { font: 400 11px Consolas, monospace; fill: #D9E4F7; }
+      .mp2S { font: 700 12px Inter, sans-serif; fill: #16233B; }
+      .mp2B { font: 400 11.5px Inter, sans-serif; fill: #16233B; }
+      .mp2N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="230" fill="#FFFFFF"/>
+    <text class="mp2T" x="40" y="26">Two HTML tags markdown happily renders: details plus summary</text>
+    <text class="mp2H" x="40" y="42">YOU TYPE</text>
+    <text class="mp2H" x="460" y="42">BROWSER SHOWS</text>
+
+    <rect x="40" y="46" width="390" height="110" rx="8" fill="#071B3D"/>
+    <text class="mp2C" x="52" y="64">&lt;details&gt;</text>
+    <text class="mp2C" x="52" y="80">&lt;summary&gt;Fun facts about me&lt;/summary&gt;</text>
+    <text class="mp2C" x="52" y="104">- I have climbed a volcano</text>
+    <text class="mp2C" x="52" y="120">- I alphabetize my spices</text>
+    <text class="mp2C" x="52" y="136">&lt;/details&gt;</text>
+
+    <rect x="460" y="56" width="380" height="32" rx="6" fill="#FFFFFF" stroke="#E5EAF3" stroke-width="1.5"/>
+    <text class="mp2S" x="476" y="76">&#9656; Fun facts about me</text>
+
+    <rect x="460" y="100" width="380" height="70" rx="6" fill="#EAF0FA" stroke="#083FA1" stroke-width="1.5"/>
+    <text class="mp2S" x="476" y="120">&#9662; Fun facts about me</text>
+    <text class="mp2B" x="492" y="138">- I have climbed a volcano</text>
+    <text class="mp2B" x="492" y="156">- I alphabetize my spices</text>
+
+    <text class="mp2N" x="40" y="206">The blank line right after &lt;/summary&gt; is the step everyone forgets - miss it and the list may not render.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - the triangle and the reveal are the same free element GitHub uses everywhere</figcaption>
+</figure>
+
         </div>
       </div>
     </details>
@@ -261,7 +327,7 @@
       <summary><span class="mode live">Live</span>The color-chip trap + alerts, in moderation<span class="mini">2 min</span><span class="caret">▶</span></summary>
       <div class="body">
         <ul>
-          <li><strong>The color-chip trap:</strong> writing a hex code in backticks like <span class="syn-chip">`#0969DA`</span> renders a cute color swatch next to it - but ONLY in issues, pull requests, and discussions. In a README it's just monospace text. Don't design your profile page around a feature that won't be there.</li>
+          <li><strong>The color-chip trap:</strong> writing a hex code in backticks like <span class="syn-chip">`#083FA1`</span> renders a cute color swatch next to it - but ONLY in issues, pull requests, and discussions. In a README it's just monospace text. Don't design your profile page around a feature that won't be there.</li>
           <li><strong>Alerts:</strong> <span class="syn-chip">&gt; [!NOTE]</span> on its own line turns the blockquote under it into a styled callout box. Five types: NOTE, TIP, IMPORTANT, WARNING, CAUTION. These DO work in READMEs - but they're GitHub-flavored, so other apps show a plain quote.</li>
           <li><strong>Dosage:</strong> GitHub's own guidance - use alerts sparingly, one or two per document, and don't nest them. An alert that's everywhere alerts no one.</li>
         </ul>
@@ -287,7 +353,7 @@
         <rect x="460" y="142" width="120" height="30" rx="15" fill="#2E63C4"/><text class="s3pC" x="486" y="161">mermaid</text>
         <rect x="590" y="142" width="130" height="30" rx="15" fill="#2E63C4"/><text class="s3pC" x="615" y="161">&gt; [!NOTE]</text>
         <text class="s3pH" x="30" y="220">Lane 3 · Issues / PRs / discussions ONLY - never READMEs</text>
-        <rect x="30" y="232" width="200" height="30" rx="15" fill="#D97706"/><text class="s3pC" x="52" y="251">color chips `#0969DA`</text>
+        <rect x="30" y="232" width="200" height="30" rx="15" fill="#D97706"/><text class="s3pC" x="52" y="251">color chips `#083FA1`</text>
         <text class="s3pX" x="245" y="251">the trap: looks great in a PR comment, plain text on your profile page</text>
         <text class="s3pX" x="30" y="290">Rule of thumb: your profile README lives in lanes 1 and 2. Anything from lane 3, leave for issue conversations.</text>
       </svg>
@@ -373,7 +439,7 @@
       <p class="qwhy">No new markdown involved - it's Session 2's ![alt](url) aimed at a badge-generating service. A community convention, not a markdown or GitHub feature.</p>
     </div>
     <div class="quiz-q" data-answer="2">
-      <p class="qtext">2 · You put `#0969DA` in your README expecting a color swatch. What renders?</p>
+      <p class="qtext">2 · You put `#083FA1` in your README expecting a color swatch. What renders?</p>
       <button class="qopt" type="button">A · A blue color chip next to the code</button>
       <button class="qopt" type="button">B · Nothing - the line disappears</button>
       <button class="qopt" type="button">C · Just monospace text - swatches only render in issues, PRs, and discussions</button>

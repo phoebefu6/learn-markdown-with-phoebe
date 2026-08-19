@@ -94,6 +94,51 @@
       <summary><span class="mode self">Self-study</span>What version history buys you<span class="mini">2 min read</span><span class="caret">▶</span></summary>
       <div class="body">
         <p>Every commit is kept, forever. Click <strong>History</strong> on any file and you can see every version you ever saved, who saved it, and when. Nothing is ever overwritten - which means <strong>fearless editing</strong>: you cannot destroy your page, only add versions of it. Made a mess? Open History, view the last good version, copy it back, commit again.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A three-commit timeline: commit 1 saved the page, commit 2 introduced a broken link tagged oops, and commit 3 is restored by copying the last good version back from History, proving that a bad commit is never destructive, only one more version in the history.">
+    <defs>
+      <marker id="arrSh2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 z" fill="#5C6B84"/>
+      </marker>
+    </defs>
+    <style>
+      .sh2T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .sh2D { font: 700 11px Inter, sans-serif; fill: #5C6B84; }
+      .sh2B { font: 700 9.5px Inter, sans-serif; fill: #FFFFFF; letter-spacing: .04em; }
+      .sh2L { font: 600 12px Inter, sans-serif; fill: #16233B; }
+      .sh2R { font: 400 11px Inter, sans-serif; fill: #5C6B84; }
+      .sh2N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="262" fill="#FFFFFF"/>
+    <text class="sh2T" x="40" y="26">Every commit is kept - nothing is ever destroyed, only added</text>
+    <line x1="70" y1="120" x2="810" y2="120" stroke="#E5EAF3" stroke-width="2"/>
+
+    <circle cx="150" cy="120" r="7" fill="#083FA1"/>
+    <text class="sh2D" x="150" y="102" text-anchor="middle">commit 1</text>
+    <rect x="106" y="132" width="88" height="17" rx="8" fill="#083FA1"/>
+    <text class="sh2B" x="150" y="144" text-anchor="middle">SAVED</text>
+    <text class="sh2L" x="150" y="168" text-anchor="middle">my page, v1</text>
+
+    <circle cx="480" cy="120" r="7" fill="#991B1B"/>
+    <text class="sh2D" x="480" y="102" text-anchor="middle">commit 2</text>
+    <rect x="436" y="132" width="88" height="17" rx="8" fill="#991B1B"/>
+    <text class="sh2B" x="480" y="144" text-anchor="middle">OOPS</text>
+    <text class="sh2L" x="480" y="168" text-anchor="middle">typo, broken link</text>
+
+    <circle cx="810" cy="120" r="7" fill="#083FA1"/>
+    <text class="sh2D" x="810" y="102" text-anchor="middle">commit 3</text>
+    <rect x="766" y="132" width="88" height="17" rx="8" fill="#083FA1"/>
+    <text class="sh2B" x="810" y="144" text-anchor="middle">RESTORED</text>
+    <text class="sh2L" x="810" y="168" text-anchor="middle">copied v1 back</text>
+
+    <line x1="480" y1="195" x2="150" y2="195" stroke="#5C6B84" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrSh2)"/>
+    <text class="sh2R" x="315" y="212" text-anchor="middle">History: copy the last good version back</text>
+
+    <text class="sh2N" x="40" y="240">Nothing is ever overwritten - a bad commit is just one more version, never a destroyed one.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - History turns every mistake into a two-click fix, never a disaster</figcaption>
+</figure>
+
         <div class="callout example">
           <span class="ex-pill">Real world</span>
           <p>This is why the world's documentation lives on GitHub: the entire Python docs, Microsoft's docs, most open-source READMEs. Thousands of strangers edit the same markdown files, and version history means no edit is ever a risk. The safety net you get on your one-file profile repo is the same one protecting projects with a million users.</p>
@@ -121,6 +166,68 @@
           <li><strong>4 · Not empty:</strong> the README.md contains any content at all.</li>
         </ul>
         <p>Miss any one and the profile simply shows nothing - no error, no hint. Memorize the four and you can debug any invisible profile in a minute.</p>
+<figure class="zoomable">
+  <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A gate diagram of the four profile README requirements: name matches username, repository is public, README.md sits in the root, and README.md has real content. If all four are true the profile shows the README; if any one is false, the profile shows nothing with no error.">
+    <defs>
+      <marker id="arrSh1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 z" fill="#5C6B84"/>
+      </marker>
+    </defs>
+    <style>
+      .sh1T { font: 700 13px Inter, sans-serif; fill: #16233B; }
+      .sh1Q { font: 700 11px Inter, sans-serif; fill: #052C70; }
+      .sh1L { font: 400 12px Inter, sans-serif; fill: #16233B; }
+      .sh1G { font: 700 11.5px Inter, sans-serif; fill: #3F2A05; }
+      .sh1O { font: 700 12px Inter, sans-serif; fill: #052C70; }
+      .sh1F { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+      .sh1E { font: 700 11px Inter, sans-serif; fill: #5C6B84; }
+      .sh1N { font: 400 12px Inter, sans-serif; fill: #5C6B84; }
+    </style>
+    <rect x="0" y="0" width="880" height="300" fill="#FFFFFF"/>
+    <text class="sh1T" x="40" y="26">All four requirements must hold, or nothing shows</text>
+
+    <rect x="40" y="46" width="24" height="24" rx="5" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="sh1Q" x="52" y="63" text-anchor="middle">1</text>
+    <text class="sh1L" x="76" y="62">Name matches your username exactly</text>
+
+    <rect x="40" y="96" width="24" height="24" rx="5" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="sh1Q" x="52" y="113" text-anchor="middle">2</text>
+    <text class="sh1L" x="76" y="112">Repository is public</text>
+
+    <rect x="40" y="146" width="24" height="24" rx="5" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="sh1Q" x="52" y="163" text-anchor="middle">3</text>
+    <text class="sh1L" x="76" y="162">README.md sits in the root</text>
+
+    <rect x="40" y="196" width="24" height="24" rx="5" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="sh1Q" x="52" y="213" text-anchor="middle">4</text>
+    <text class="sh1L" x="76" y="212">README.md has real content</text>
+
+    <path d="M520,58 L540,58 L540,208 L520,208" fill="none" stroke="#5C6B84" stroke-width="1.5"/>
+    <path d="M520,108 L534,108" fill="none" stroke="#5C6B84" stroke-width="1.5"/>
+    <path d="M520,158 L534,158" fill="none" stroke="#5C6B84" stroke-width="1.5"/>
+    <line x1="540" y1="133" x2="558" y2="133" stroke="#5C6B84" stroke-width="1.5" marker-end="url(#arrSh1)"/>
+
+    <rect x="560" y="104" width="110" height="60" rx="8" fill="#FDF3E3" stroke="#D97706"/>
+    <text class="sh1G" x="615" y="128" text-anchor="middle">ALL FOUR</text>
+    <text class="sh1G" x="615" y="146" text-anchor="middle">TRUE?</text>
+
+    <line x1="670" y1="120" x2="716" y2="80" stroke="#5C6B84" stroke-width="1.5" marker-end="url(#arrSh1)"/>
+    <text class="sh1E" x="700" y="96">yes</text>
+    <rect x="720" y="50" width="150" height="56" rx="8" fill="#EAF0FA" stroke="#083FA1"/>
+    <text class="sh1O" x="795" y="74" text-anchor="middle">&#10003; README shows</text>
+    <text class="sh1O" x="795" y="92" text-anchor="middle">on your profile</text>
+
+    <line x1="670" y1="148" x2="716" y2="196" stroke="#5C6B84" stroke-width="1.5" marker-end="url(#arrSh1)"/>
+    <text class="sh1E" x="700" y="188">no</text>
+    <rect x="720" y="190" width="150" height="56" rx="8" fill="#FEF2F2" stroke="#FCA5A5"/>
+    <text class="sh1F" x="795" y="214" text-anchor="middle">&#10007; Shows nothing</text>
+    <text class="sh1F" x="795" y="232" text-anchor="middle">no error, no hint</text>
+
+    <text class="sh1N" x="40" y="276">Miss any one of the four and the profile simply shows nothing - no error, no hint anywhere.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - four small checks gate one big outcome, and there is no partial credit</figcaption>
+</figure>
+
       </div>
     </details>
 
